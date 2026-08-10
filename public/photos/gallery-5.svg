@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d0a07"/>
+      <stop offset="0.55" stop-color="#1c140c"/>
+      <stop offset="1" stop-color="#2a1c10"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffc06e" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#ffc06e" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffd98a" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#ffd98a" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <filter id="blurText" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+    <linearGradient id="tableG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#241a10"/>
+      <stop offset="1" stop-color="#0d0906"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+
+  <!-- ambient glows -->
+  <ellipse cx="500" cy="380" rx="420" ry="380" fill="url(#glow2)" filter="url(#soft)"/>
+  <ellipse cx="1150" cy="330" rx="460" ry="400" fill="url(#glow2)" filter="url(#soft)"/>
+
+  <!-- window glow for exterior -->
+  
+
+  <!-- pendant lamps -->
+  <g>
+    <rect x="596" y="0" width="8" height="170" fill="#1a1109"/>
+    <rect x="1246" y="0" width="8" height="150" fill="#1a1109"/>
+    <ellipse cx="600" cy="250" rx="120" ry="150" fill="url(#glow1)" filter="url(#soft)"/>
+    <ellipse cx="1250" cy="220" rx="110" ry="140" fill="url(#glow1)" filter="url(#soft)"/>
+    <path d="M560 200 Q600 250 640 200 L620 260 L580 260 Z" fill="#ffd98a"/>
+    <path d="M1210 180 Q1250 225 1290 180 L1270 238 L1230 238 Z" fill="#c97b24"/>
+  </g>
+
+  <!-- sofa silhouettes -->
+  <g>
+    <path d="M120 1000 C120 880 160 830 260 830 L560 830 C620 830 640 860 640 920 L640 1000 Z" fill="#1d140c"/>
+    <path d="M130 1000 C130 900 170 855 250 855 L350 855 C380 855 400 870 400 900 L400 1000 Z" fill="#33241a"/>
+    <path d="M1000 1000 C1000 900 1040 855 1120 855 L1420 855 C1480 855 1500 885 1500 940 L1500 1000 Z" fill="#1d140c"/>
+    <path d="M1010 1000 C1010 915 1050 880 1120 880 L1250 880 C1290 880 1310 900 1310 930 L1310 1000 Z" fill="#33241a"/>
+  </g>
+
+  <!-- coffee table -->
+  <ellipse cx="800" cy="1000" rx="300" ry="70" fill="#050403"/>
+  <path d="M620 860 L980 860 L930 1000 L670 1000 Z" fill="url(#tableG)"/>
+  <ellipse cx="800" cy="856" rx="180" ry="26" fill="#32250f"/>
+
+  <!-- vignette -->
+  <rect width="1600" height="1000" fill="url(#bg)" opacity="0"/>
+  <rect x="0" y="0" width="1600" height="1000" fill="none" stroke="#000" stroke-width="120" opacity="0.35" filter="url(#soft)"/>
+
+  <!-- label -->
+  <g font-family="'Playfair Display', Georgia, serif">
+    <text x="800" y="540" text-anchor="middle" font-size="44" letter-spacing="10" fill="#f3eddc" opacity="0.92" font-weight="600">Кофе и кальян</text>
+    <text x="800" y="588" text-anchor="middle" font-size="19" letter-spacing="4" fill="#e8b96a" opacity="0.8" font-weight="500">ДЕТАЛИ</text>
+  </g>
+</svg>

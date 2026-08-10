@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Izzy Hook — кальянная · ресторан · бар · Санкт-Петербург</title>
+    <meta
+      name="description"
+      content="Izzy Hook — уютная кальянная и ресторан на Октябрьской набережной в Санкт-Петербурге. Рейтинг 5.0, атмосфера уюта, вкусная кухня. Бронируйте столик онлайн."
+    />
+    <meta property="og:title" content="Izzy Hook — уютное место на Октябрьской набережной" />
+    <meta property="og:description" content="Кальянная · ресторан · бар. Рейтинг 5.0. Бронируйте столик онлайн." />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0a08'/%3E%3Ccircle cx='32' cy='26' r='11' fill='none' stroke='%23e8b96a' stroke-width='3'/%3E%3Ccircle cx='32' cy='44' r='6' fill='%23e8b96a'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="preloader" aria-hidden="true">
+      <div class="preloader__inner">
+        <span class="preloader__logo">IZZY&nbsp;HOOK</span>
+        <span class="preloader__bar"><i></i></span>
+      </div>
+    </div>
+
+    <canvas id="particles" aria-hidden="true"></canvas>
+    <div id="glow-follow" aria-hidden="true"></div>
+
+    <header class="nav" id="nav">
+      <div class="container nav__inner">
+        <a href="#hero" class="nav__logo" data-magnetic>
+          <span class="nav__logo-mark">I&nbsp;H</span>
+          <span class="nav__logo-text">IZZY HOOK</span>
+        </a>
+        <nav class="nav__links" aria-label="Основная навигация">
+          <a href="#about" class="nav__link">О кафе</a>
+          <a href="#menu" class="nav__link">Меню</a>
+          <a href="#gallery" class="nav__link">Галерея</a>
+          <a href="#contacts" class="nav__link">Контакты</a>
+        </nav>
+        <button class="btn btn--ghost nav__cta" data-open-booking data-magnetic>
+          Забронировать
+        </button>
+        <button class="nav__burger" id="nav-burger" aria-label="Меню">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div class="nav__mobile" id="nav-mobile">
+        <a href="#about" class="nav__link">О кафе</a>
+        <a href="#menu" class="nav__link">Меню</a>
+        <a href="#gallery" class="nav__link">Галерея</a>
+        <a href="#contacts" class="nav__link">Контакты</a>
+        <button class="btn btn--primary nav__mobile-cta" data-open-booking>Забронировать столик</button>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero" id="hero">
+        <div class="hero__slides" id="hero-slides" aria-hidden="true"></div>
+        <div class="hero__overlay" aria-hidden="true"></div>
+        <div class="hero__grain" aria-hidden="true"></div>
+
+        <div class="container hero__content">
+          <div class="hero__eyebrow reveal">
+            <span class="hero__award">★ Хорошее место 2026</span>
+            <span class="hero__dot"></span>
+            <span class="hero__rating">Рейтинг 5.0 · 174 оценки</span>
+          </div>
+          <h1 class="hero__title reveal">
+            Место, где
+            <em>уют</em> встречает
+            <em>вкус</em>
+          </h1>
+          <p class="hero__desc reveal">
+            Изящный лаунж, домашняя кухня и мягкий свет — Izzy Hook на Октябрьской набережной.
+            Здесь вечер тянется медленно, а разговор становится тёплым.
+          </p>
+          <div class="hero__actions reveal">
+            <button class="btn btn--primary btn--lg" data-open-booking data-magnetic>
+              Забронировать столик
+            </button>
+            <a class="btn btn--outline btn--lg" href="#menu" data-magnetic>Смотреть меню</a>
+          </div>
+          <div class="hero__meta reveal">
+            <div class="hero__meta-item">
+              <span class="hero__meta-label">Адрес</span>
+              <span class="hero__meta-value">Октябрьская набережная, 34к2</span>
+            </div>
+            <div class="hero__meta-item">
+              <span class="hero__meta-label">Часы работы</span>
+              <span class="hero__meta-value">Ежедневно · 12:00 — 03:00</span>
+            </div>
+            <div class="hero__meta-item">
+              <span class="hero__meta-label">Телефон</span>
+              <a class="hero__meta-value hero__meta-link" href="tel:+79112774545">+7 (911) 277-45-45</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__side" aria-hidden="true">
+          <div class="hero__slide-counter"><span id="hero-current">01</span><span id="hero-total">/ 03</span></div>
+          <div class="hero__slide-dots" id="hero-dots"></div>
+          <div class="hero__scroll">
+            <span>Листайте</span>
+            <i></i>
+          </div>
+        </div>
+      </section>
+
+      <!-- MARQUEE -->
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span>Кальяны</span><i>✦</i>
+          <span>Лаунж</span><i>✦</i>
+          <span>Кухня</span><i>✦</i>
+          <span>Музыка</span><i>✦</i>
+          <span>Напитки</span><i>✦</i>
+          <span>Можно с собакой</span><i>✦</i>
+        </div>
+      </div>
+
+      <!-- ABOUT -->
+      <section class="section about" id="about">
+        <div class="container">
+          <div class="section__head reveal">
+            <span class="section__kicker">О кафе</span>
+            <h2 class="section__title">Тёплый свет, мягкие диваны и еда, которую любят</h2>
+            <p class="section__lead">
+              Izzy Hook — это уютная кальянная и ресторан на берегу Невы. Мы собрали
+              атмосферу, в которую хочется возвращаться: приглушённый свет, глубокие
+              кресла, авторская кухня и кальяны, за которые нас хвалят 96% гостей.
+            </p>
+          </div>
+
+          <div class="about__stats" id="about-stats">
+            <div class="stat reveal" data-count="5.0" data-decimals="1" data-suffix="">
+              <span class="stat__value">0</span>
+              <span class="stat__label">Рейтинг на Яндекс Картах</span>
+            </div>
+            <div class="stat reveal" data-count="174" data-suffix="">
+              <span class="stat__value">0</span>
+              <span class="stat__label">Оценок гостей</span>
+            </div>
+            <div class="stat reveal" data-count="96" data-suffix="%">
+              <span class="stat__value">0</span>
+              <span class="stat__label">Хвалят атмосферу</span>
+            </div>
+            <div class="stat reveal" data-count="100" data-suffix="%">
+              <span class="stat__value">0</span>
+              <span class="stat__label">Восторг от интерьера</span>
+            </div>
+          </div>
+
+          <div class="features">
+            <article class="feature reveal" data-feature>
+              <div class="feature__icon" data-icon="couch"></div>
+              <h3 class="feature__title">Атмосфера уюта</h3>
+              <p class="feature__text">
+                Мягкие диваны, тёплый свет лаунж-зон и музыка, которая не мешает разговору.
+              </p>
+            </article>
+            <article class="feature reveal" data-feature>
+              <div class="feature__icon" data-icon="hookah"></div>
+              <h3 class="feature__title">Кальянная на высоте</h3>
+              <p class="feature__text">
+                96% гостей ставят кальян выше пятёрки. А за креветками темпура приезжают с другого конца города.
+              </p>
+            </article>
+            <article class="feature reveal" data-feature>
+              <div class="feature__icon" data-icon="dog"></div>
+              <h3 class="feature__title">Можно с собакой</h3>
+              <p class="feature__text">
+                Ваш питомец — желанный гость. Чувствуйте себя как дома вместе с нами.
+              </p>
+            </article>
+            <article class="feature reveal" data-feature>
+              <div class="feature__icon" data-icon="bag"></div>
+              <h3 class="feature__title">Еда на вынос</h3>
+              <p class="feature__text">
+                Заберите любимые блюда с собой — закажите заранее и получите без ожидания.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- MENU -->
+      <section class="section menu" id="menu">
+        <div class="container">
+          <div class="section__head reveal">
+            <span class="section__kicker">Меню</span>
+            <h2 class="section__title">Кухня, от которой «просто супер»</h2>
+            <p class="section__lead">
+              От хрустящих баклажанов до пасты с морепродуктами — всё, за чем стоит
+              заехать. Цены — из меню заведения.
+            </p>
+          </div>
+
+          <div class="menu__tabs reveal" id="menu-tabs" role="tablist" aria-label="Категории меню"></div>
+
+          <div class="menu__panel reveal" id="menu-panel" role="tabpanel"></div>
+
+          <div class="menu__note reveal">
+            <span>С полным меню и акциями — на</span>
+            <a href="https://omnom.rest/izzy-hook" target="_blank" rel="noopener">omnom.rest/izzy-hook</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALLERY -->
+      <section class="section gallery" id="gallery">
+        <div class="container">
+          <div class="section__head reveal">
+            <span class="section__kicker">Галерея</span>
+            <h2 class="section__title">Загляните внутрь</h2>
+            <p class="section__lead">
+              Приглушённый свет, глубокие кресла и тёплая лаунж-атмосфера. Наведите курсор на фото.
+            </p>
+          </div>
+          <div class="gallery__grid" id="gallery-grid"></div>
+        </div>
+      </section>
+
+      <!-- BOOKING CTA -->
+      <section class="section booking" id="booking">
+        <div class="container">
+          <div class="booking__card reveal">
+            <div class="booking__glow" aria-hidden="true"></div>
+            <div class="booking__inner">
+              <span class="section__kicker">Бронирование</span>
+              <h2 class="booking__title">Столик для вашего вечера</h2>
+              <p class="booking__text">
+                Забронируйте место онлайн за пару секунд. Мы сохраним ваш столик,
+                а вы получите код брони — останется только прийти.
+              </p>
+              <div class="booking__actions">
+                <button class="btn btn--primary btn--lg" data-open-booking data-magnetic>Забронировать столик</button>
+                <button class="btn btn--outline btn--lg" id="btn-check-booking" data-magnetic>Проверить мою бронь</button>
+              </div>
+              <div class="booking__hints">
+                <span><i>✓</i> Сохраняется в вашем браузере</span>
+                <span><i>✓</i> Проверка свободных мест в реальном времени</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACTS -->
+      <section class="section contacts" id="contacts">
+        <div class="container">
+          <div class="section__head reveal">
+            <span class="section__kicker">Контакты</span>
+            <h2 class="section__title">Как нас найти</h2>
+          </div>
+
+          <div class="contacts__grid">
+            <div class="contacts__info">
+              <div class="contact-card reveal">
+                <span class="contact-card__icon" data-icon="pin"></span>
+                <div>
+                  <h3>Адрес</h3>
+                  <p>Санкт-Петербург, Октябрьская набережная, 34к2</p>
+                  <p class="contact-card__sub">Остановка «Октябрьская набережная, 38» · 182 м · м. Проспект Большевиков</p>
+                </div>
+              </div>
+              <div class="contact-card reveal">
+                <span class="contact-card__icon" data-icon="clock"></span>
+                <div>
+                  <h3>Часы работы</h3>
+                  <p>Ежедневно · 12:00 — 03:00</p>
+                  <p class="contact-card__sub">Удобно для ужинов и вечерних встреч</p>
+                </div>
+              </div>
+              <div class="contact-card reveal">
+                <span class="contact-card__icon" data-icon="phone"></span>
+                <div>
+                  <h3>Телефон</h3>
+                  <p><a href="tel:+79112774545" class="contact-card__link">+7 (911) 277-45-45</a></p>
+                  <p class="contact-card__sub">Позвоните — подскажем и поможем с бронированием</p>
+                </div>
+              </div>
+              <div class="contact-card reveal">
+                <span class="contact-card__icon" data-icon="telegram"></span>
+                <div>
+                  <h3>Мы на связи</h3>
+                  <p class="contact-card__row">
+                    <a class="contact-card__chip" href="https://t.me/noonloungebar" target="_blank" rel="noopener">
+                      <span data-icon="telegram"></span> Telegram
+                    </a>
+                    <a class="contact-card__chip" href="https://vk.ru/izzyhook" target="_blank" rel="noopener">
+                      <span data-icon="vk"></span> ВКонтакте
+                    </a>
+                  </p>
+                  <p class="contact-card__sub">Напишите нам — ответим в течение пары минут</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="contacts__map reveal">
+              <iframe
+                title="Izzy Hook на карте"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=30.4850%2C59.9026%2C30.5274%2C59.9206&layer=mapnik&marker=59.9116%2C30.5062"
+                loading="lazy"
+              ></iframe>
+              <div class="contacts__map-actions">
+                <a class="btn btn--ghost" href="https://yandex.ru/maps/-/CTWUz2Y1" target="_blank" rel="noopener" data-magnetic>
+                  Открыть в Яндекс Картах
+                </a>
+                <a class="btn btn--ghost" href="https://yandex.ru/maps/-/CTWUz2Y1" target="_blank" rel="noopener" data-magnetic>
+                  Построить маршрут
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div class="footer__brand">
+          <span class="footer__logo">IZZY HOOK</span>
+          <p>Уютное место на Октябрьской набережной. Рейтинг 5.0 · «Хорошее место 2026».</p>
+        </div>
+        <div class="footer__links">
+          <a href="#about">О кафе</a>
+          <a href="#menu">Меню</a>
+          <a href="#gallery">Галерея</a>
+          <a href="#contacts">Контакты</a>
+        </div>
+        <div class="footer__social">
+          <a class="footer__chip" href="https://t.me/noonloungebar" target="_blank" rel="noopener"><span data-icon="telegram"></span> Telegram</a>
+          <a class="footer__chip" href="https://vk.ru/izzyhook" target="_blank" rel="noopener"><span data-icon="vk"></span> ВКонтакте</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span id="year"></span> Izzy Hook</span>
+        <span>Сделано с теплом для уютных вечеров</span>
+      </div>
+    </footer>
+
+    <!-- Booking modal -->
+    <div class="modal" id="booking-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal__backdrop" data-close-modal></div>
+      <div class="modal__window">
+        <button class="modal__close" data-close-modal aria-label="Закрыть">✕</button>
+        <div class="modal__view is-active" id="view-form">
+          <span class="section__kicker">Бронирование</span>
+          <h3 class="modal__title" id="modal-title">Забронировать столик</h3>
+          <p class="modal__subtitle">Заполните форму — и столик будет ждать вас.</p>
+
+          <form id="booking-form" novalidate>
+            <div class="form__row">
+              <label class="form__field">
+                <span class="form__label">Имя</span>
+                <input type="text" name="name" placeholder="Как к вам обращаться" autocomplete="name" />
+                <span class="form__error"></span>
+              </label>
+              <label class="form__field">
+                <span class="form__label">Телефон</span>
+                <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" />
+                <span class="form__error"></span>
+              </label>
+            </div>
+            <div class="form__row">
+              <label class="form__field">
+                <span class="form__label">Дата</span>
+                <input type="date" name="date" />
+                <span class="form__error"></span>
+              </label>
+              <label class="form__field">
+                <span class="form__label">Время</span>
+                <select name="time">
+                  <option value="">Выберите время</option>
+                </select>
+                <span class="form__error"></span>
+              </label>
+            </div>
+            <div class="form__row">
+              <label class="form__field">
+                <span class="form__label">Гостей</span>
+                <select name="guests">
+                  <option value="2">2 гостя</option>
+                  <option value="1">1 гость</option>
+                  <option value="3">3 гостя</option>
+                  <option value="4">4 гостя</option>
+                  <option value="5">5 гостей</option>
+                  <option value="6">6 гостей</option>
+                  <option value="8">8 гостей</option>
+                  <option value="10">10 гостей</option>
+                </select>
+                <span class="form__error"></span>
+              </label>
+              <label class="form__field">
+                <span class="form__label">Комментарий</span>
+                <input type="text" name="comment" placeholder="Например: столик у окна" />
+              </label>
+            </div>
+            <button type="submit" class="btn btn--primary btn--block btn--lg" id="booking-submit">
+              Забронировать
+            </button>
+            <p class="form__hint">
+              * Места ограничены — мы проверим свободные слоты на выбранное время.
+            </p>
+          </form>
+
+          <button class="modal__switch" id="goto-check">У меня уже есть бронь — проверить</button>
+        </div>
+
+        <div class="modal__view" id="view-success">
+          <div class="modal__success-icon">✓</div>
+          <h3 class="modal__title">Столик забронирован!</h3>
+          <p class="modal__subtitle" id="success-details"></p>
+          <div class="modal__code">
+            <span>Ваш код брони</span>
+            <strong id="success-code">IH-XXXX</strong>
+          </div>
+          <p class="modal__note">
+            Сохраните код — его нужно назвать при входе. Мы отправим детали и напоминание в Telegram.
+          </p>
+          <a class="btn btn--primary btn--block" href="https://t.me/noonloungebar" target="_blank" rel="noopener">
+            Получить подтверждение в Telegram
+          </a>
+          <button class="btn btn--ghost btn--block modal__again" data-close-modal>Готово</button>
+        </div>
+
+        <div class="modal__view" id="view-check">
+          <span class="section__kicker">Проверка брони</span>
+          <h3 class="modal__title">Найти мою бронь</h3>
+          <p class="modal__subtitle">Введите телефон или код брони — покажем ваши записи.</p>
+          <form id="check-form" novalidate>
+            <label class="form__field">
+              <span class="form__label">Телефон или код брони</span>
+              <input type="text" name="query" placeholder="+7 (___) ___-__-__ или IH-XXXX" />
+              <span class="form__error"></span>
+            </label>
+            <button type="submit" class="btn btn--primary btn--block">Найти</button>
+          </form>
+          <div class="check-results" id="check-results"></div>
+          <button class="modal__switch" id="goto-book">Забронировать столик</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <!-- Telegram FAB -->
+    <a class="fab" href="https://t.me/noonloungebar" target="_blank" rel="noopener" aria-label="Написать в Telegram" data-magnetic>
+      <span class="fab__pulse"></span>
+      <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true">
+        <path d="M21.9 4.6c.3-1.2-.9-2.2-2-1.7L2.7 9.2c-1.2.5-1.1 2.2.1 2.6l4.5 1.4 1.7 5.3c.4 1.1 1.8 1.4 2.6.6l2.4-2.4 4.6 3.4c.9.7 2.2.2 2.4-1l3-14.5zM8.4 12.9l9.3-5.7c.4-.2.8.3.5.6l-7.3 6.9-.3 3.2-2.2-5z"/>
+      </svg>
+    </a>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
