@@ -7,6 +7,7 @@
 <meta name="description" content="Izzy Hook — кальянная и ресторан на Октябрьской набережной. Рейтинг 5.0, 172 позиции меню. Бронируйте столик онлайн.">
 <meta property="og:title" content="Izzy Hook — уютное место на Октябрьской набережной">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://omnom.rest/upload/resize_cache/iblock/541/500_500_283c336f9c1f0202446e77efdbabeaac9/nuzs9gmvbt33kvwqaz93zgv3bjur8tix.jpeg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0a08'/%3E%3Ccircle cx='32' cy='26' r='11' fill='none' stroke='%23e8b96a' stroke-width='3'/%3E%3Ccircle cx='32' cy='44' r='6' fill='%23e8b96a'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -116,27 +117,31 @@ body{font-family:var(--font-body);background:var(--bg);color:var(--white);overfl
 .feature-title{font-family:var(--font-display);font-size:20px;font-weight:700;margin-bottom:10px}
 .feature-text{font-size:14px;color:var(--white2);line-height:1.7}
 
-/* MENU SECTIONS — mega menu */
+/* MENU */
 .menu-section-nav{display:flex;gap:8px;flex-wrap:wrap;margin:40px 0 24px}
-.menu-section-btn{padding:12px 24px;background:transparent;color:var(--white2);border:1px solid rgba(255,255,255,.08);border-radius:50px;font-family:var(--font-body);font-size:14px;font-weight:600;cursor:pointer;transition:all .3s;white-space:nowrap;display:flex;align-items:center;gap:8px}
+.menu-section-btn{padding:12px 24px;background:transparent;color:var(--white2);border:1px solid rgba(255,255,255,.08);border-radius:50px;font-family:var(--font-body);font-size:14px;font-weight:600;cursor:pointer;transition:all .3s;white-space:nowrap}
 .menu-section-btn:hover{border-color:rgba(212,168,83,.3);color:var(--gold)}
 .menu-section-btn.active{background:linear-gradient(135deg,var(--gold),#b8943a);color:var(--bg);border-color:transparent;box-shadow:0 4px 16px rgba(212,168,83,.3)}
-.menu-section-btn img{width:20px;height:20px;border-radius:4px}
 
 .menu-subnav{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:24px}
 .menu-sub-btn{padding:8px 16px;background:transparent;color:var(--white3);border:1px solid transparent;border-radius:50px;font-family:var(--font-body);font-size:13px;font-weight:500;cursor:pointer;transition:all .25s;white-space:nowrap}
 .menu-sub-btn:hover{color:var(--gold);border-color:rgba(212,168,83,.2)}
 .menu-sub-btn.active{background:rgba(212,168,83,.1);color:var(--gold);border-color:rgba(212,168,83,.25)}
 
-.menu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-.menu-item{display:flex;justify-content:space-between;align-items:flex-start;padding:16px 20px;background:var(--bg3);border:1px solid rgba(255,255,255,.03);border-radius:var(--radius);transition:all .4s;position:relative;overflow:hidden}
-.menu-item:hover{border-color:rgba(212,168,83,.15);background:var(--bg2);transform:translateX(4px);box-shadow:0 8px 30px rgba(0,0,0,.2)}
-.menu-item-main{flex:1;min-width:0}
-.menu-item-header{display:flex;align-items:center;gap:8px;margin-bottom:2px;flex-wrap:wrap}
-.menu-item-name{font-size:15px;font-weight:600}
-.menu-item-volume{font-size:12px;color:var(--white3);font-weight:500}
-.menu-item-desc{font-size:12px;color:var(--white3);line-height:1.5;margin-top:4px;max-width:360px}
-.menu-item-price{font-family:var(--font-display);font-size:18px;font-weight:700;color:var(--gold);white-space:nowrap;margin-left:16px;text-align:right;min-width:60px}
+/* MENU GRID WITH IMAGES */
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+.menu-item{display:flex;gap:16px;padding:0;background:var(--bg3);border:1px solid rgba(255,255,255,.04);border-radius:var(--radius);transition:all .4s;overflow:hidden;min-height:110px}
+.menu-item:hover{border-color:rgba(212,168,83,.15);background:var(--bg2);transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,0,0,.25)}
+.menu-item-img{width:110px;min-width:110px;height:110px;object-fit:cover;background:var(--bg);transition:transform .5s}
+.menu-item:hover .menu-item-img{transform:scale(1.06)}
+.menu-item-body{flex:1;padding:16px 16px 16px 4px;display:flex;flex-direction:column;justify-content:center;min-width:0}
+.menu-item-header{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:4px}
+.menu-item-name{font-size:15px;font-weight:600;line-height:1.3}
+.menu-item-volume{font-size:11px;color:var(--white3);font-weight:500;margin-left:6px;white-space:nowrap}
+.menu-item-price{font-family:var(--font-display);font-size:17px;font-weight:700;color:var(--gold);white-space:nowrap}
+.menu-item-desc{font-size:12px;color:var(--white3);line-height:1.5;margin-top:4px}
+.menu-item-noimg{padding:18px 20px;justify-content:space-between;align-items:flex-start}
+.menu-item-noimg .menu-item-body{padding:0}
 
 .menu-note{margin-top:32px;text-align:center;color:var(--white3);font-size:14px}
 .menu-note a{color:var(--gold);text-decoration:none;font-weight:600;transition:var(--transition)}
@@ -212,15 +217,14 @@ body{font-family:var(--font-body);background:var(--bg);color:var(--white);overfl
 .modal-note{font-size:13px;color:var(--white3);margin-bottom:20px;line-height:1.6}
 .modal-switch{display:block;width:100%;padding:12px;background:transparent;color:var(--gold);border:none;font-size:14px;font-weight:500;cursor:pointer;margin-top:16px;transition:var(--transition)}
 .modal-switch:hover{color:var(--gold2)}
-.modal-again{margin-top:12px}
 
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
 .form-field{display:flex;flex-direction:column;gap:6px}
-.form-label{font-size:13px;font-weight:600;color:var(--white2);letter-spacing:.3px}
+.form-label{font-size:13px;font-weight:600;color:var(--white2)}
 .form-field input,.form-field select{padding:14px 16px;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);color:var(--white);font-family:var(--font-body);font-size:15px;transition:var(--transition);width:100%}
 .form-field input:focus,.form-field select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,168,83,.1)}
 .form-field input::placeholder{color:var(--white3)}
-.form-error{font-size:12px;color:var(--red);min-height:0}
+.form-error{font-size:12px;color:var(--red)}
 .form-hint{font-size:12px;color:var(--white3);text-align:center;margin-top:12px}
 
 .fab{position:fixed;bottom:32px;right:32px;z-index:999;width:56px;height:56px;background:linear-gradient(135deg,var(--gold),#b8943a);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--bg);text-decoration:none;box-shadow:0 8px 30px rgba(212,168,83,.35);transition:all .4s}
@@ -234,10 +238,8 @@ body{font-family:var(--font-body);background:var(--bg);color:var(--white);overfl
 .toast.error{border-color:rgba(231,76,60,.4)}
 .toast.success{border-color:rgba(212,168,83,.4)}
 
-/* RESPONSIVE */
 @media(max-width:1024px){.features,.about-stats{grid-template-columns:repeat(2,1fr)}.contacts-grid{grid-template-columns:1fr}.menu-grid{grid-template-columns:1fr}.gallery-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:768px){.nav-links{display:none}.nav-burger{display:flex}.hero{min-height:100svh}.hero-meta{gap:24px}.features,.about-stats{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.booking-card{padding:36px 24px}.gallery-grid{grid-template-columns:1fr}.footer-inner{flex-direction:column;align-items:center;text-align:center}.footer-links{align-items:center}.section{padding:80px 0}}
-@media(max-width:480px){.hero-actions{flex-direction:column}.hero-actions .btn,.booking-actions .btn{width:100%;justify-content:center}.booking-actions{flex-direction:column}.container{padding:0 20px}.modal-window{padding:32px 24px}}
+@media(max-width:768px){.nav-links{display:none}.nav-burger{display:flex}.hero{min-height:100svh}.hero-meta{gap:24px}.features,.about-stats{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.booking-card{padding:36px 24px}.gallery-grid{grid-template-columns:1fr}.footer-inner{flex-direction:column;align-items:center;text-align:center}.footer-links{align-items:center}.section{padding:80px 0}.menu-item-img{width:90px;min-width:90px;height:90px}}
 </style>
 </head>
 <body>
@@ -248,42 +250,27 @@ body{font-family:var(--font-body);background:var(--bg);color:var(--white);overfl
 <header class="nav" id="nav">
 <div class="nav-inner">
 <a href="#hero" class="nav-logo"><span class="nav-logo-mark">IH</span>IZZY HOOK</a>
-<nav class="nav-links">
-<a href="#about" class="nav-link">О кафе</a>
-<a href="#menu" class="nav-link">Меню</a>
-<a href="#gallery" class="nav-link">Галерея</a>
-<a href="#contacts" class="nav-link">Контакты</a>
-</nav>
+<nav class="nav-links"><a href="#about" class="nav-link">О кафе</a><a href="#menu" class="nav-link">Меню</a><a href="#gallery" class="nav-link">Галерея</a><a href="#contacts" class="nav-link">Контакты</a></nav>
 <button class="btn btn-primary btn-sm" onclick="openBooking()">Забронировать</button>
 <button class="nav-burger" id="nav-burger" aria-label="Меню"><span></span><span></span><span></span></button>
 </div>
 <div class="nav-mobile" id="nav-mobile">
-<a href="#about" class="nav-link">О кафе</a>
-<a href="#menu" class="nav-link">Меню</a>
-<a href="#gallery" class="nav-link">Галерея</a>
-<a href="#contacts" class="nav-link">Контакты</a>
+<a href="#about" class="nav-link">О кафе</a><a href="#menu" class="nav-link">Меню</a><a href="#gallery" class="nav-link">Галерея</a><a href="#contacts" class="nav-link">Контакты</a>
 <button class="btn btn-primary btn-lg" onclick="openBooking()">Забронировать столик</button>
 </div>
 </header>
 
-<section class="hero" id="hero">
-<div class="hero-bg"></div>
-<div class="hero-content">
+<section class="hero" id="hero"><div class="hero-bg"></div><div class="hero-content">
 <div class="hero-badge">★ Хорошее место 2026 <span class="hero-badge-dot"></span> Рейтинг 5.0 · 174 оценки</div>
 <h1 class="hero-title">Место, где<br><em>уют</em> встречает<br><em>вкус</em></h1>
-<p class="hero-desc">Кальянная, ресторан и бар на Октябрьской набережной. 172 позиции меню, авторские коктейли, дымное меню и чайная карта.</p>
-<div class="hero-actions">
-<button class="btn btn-primary btn-lg" onclick="openBooking()">Забронировать столик</button>
-<a class="btn btn-outline btn-lg" href="#menu">Смотреть меню</a>
-</div>
+<p class="hero-desc">Кальянная, ресторан и бар на Октябрьской набережной. 172 позиции меню с фото, авторские коктейли, дымное меню и чайная карта.</p>
+<div class="hero-actions"><button class="btn btn-primary btn-lg" onclick="openBooking()">Забронировать столик</button><a class="btn btn-outline btn-lg" href="#menu">Смотреть меню</a></div>
 <div class="hero-meta">
 <div class="hero-meta-item"><span class="hero-meta-label">Адрес</span><span class="hero-meta-value">Октябрьская набережная, 34к2</span></div>
 <div class="hero-meta-item"><span class="hero-meta-label">Часы</span><span class="hero-meta-value">13:00 — 02:00</span></div>
 <div class="hero-meta-item"><span class="hero-meta-label">Телефон</span><a class="hero-meta-value hero-meta-link" href="tel:+79112774545">+7 (911) 277-45-45</a></div>
-</div>
-</div>
-<div class="hero-scroll"><span>Листайте</span><div class="hero-scroll-line"></div></div>
-</section>
+</div></div>
+<div class="hero-scroll"><span>Листайте</span><div class="hero-scroll-line"></div></div></section>
 
 <div class="marquee"><div class="marquee-track">
 <span>Кальяны</span><i>✦</i><span>Лаунж</span><i>✦</i><span>Кухня</span><i>✦</i><span>Коктейли</span><i>✦</i><span>Бар</span><i>✦</i><span>Чай</span><i>✦</i><span>Можно с собакой</span><i>✦</i>
@@ -293,381 +280,308 @@ body{font-family:var(--font-body);background:var(--bg);color:var(--white);overfl
 <section class="section" id="about"><div class="container">
 <span class="section-kicker reveal">О кафе</span>
 <h2 class="section-title reveal">Тёплый свет, мягкие диваны<br>и еда, которую любят</h2>
-<p class="section-lead reveal">Izzy Hook — это уютная кальянная, ресторан и бар на берегу Невы. В нашем меню 172 позиции: от авторской кухни до дымного меню, от коктейлей до чайной карты. Рейтинг 5.0 и атмосфера, в которую хочется возвращаться.</p>
+<p class="section-lead reveal">Izzy Hook — уютная кальянная, ресторан и бар на берегу Невы. 172 позиции меню с фото, рейтинг 5.0 и атмосфера, в которую хочется возвращаться.</p>
 <div class="about-stats">
 <div class="stat reveal"><span class="stat-value" data-counter="5.0" data-decimals="1">0</span><span class="stat-label">Рейтинг на Яндекс Картах</span></div>
 <div class="stat reveal"><span class="stat-value" data-counter="172">0</span><span class="stat-label">Позиций в меню</span></div>
 <div class="stat reveal"><span class="stat-value" data-counter="96" data-suffix="%">0</span><span class="stat-label">Хвалят атмосферу</span></div>
-<div class="stat reveal"><span class="stat-value" data-counter="100" data-suffix="%">0</span><span class="stat-label">Восторг от интерьера</span></div>
+<div class="stat reveal"><span class="stat-value" data-counter="63">0</span><span class="stat-label">Блюд с фото</span></div>
 </div>
 <div class="features">
-<article class="feature reveal"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 21h8"/><path d="M9 21v-4"/><path d="M15 21v-4"/><path d="M12 17v-3"/><path d="M8 8h8v3a4 4 0 0 1-4 4 4 4 0 0 1-4-4V8z"/></svg></div><h3 class="feature-title">Атмосфера уюта</h3><p class="feature-text">Мягкие диваны, приглушённый свет лаунж-зон и музыка, которая не мешает разговору.</p></article>
+<article class="feature reveal"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 21h8"/><path d="M9 21v-4"/><path d="M15 21v-4"/><path d="M12 17v-3"/><path d="M8 8h8v3a4 4 0 0 1-4 4 4 4 0 0 1-4-4V8z"/></svg></div><h3 class="feature-title">Атмосфера уюта</h3><p class="feature-text">Мягкие диваны, приглушённый свет лаунж-зон и музыка.</p></article>
 <article class="feature reveal"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 21h8"/><path d="M9 21v-4"/><path d="M15 21v-4"/><path d="M12 17v-3"/><path d="M8 8h8v3a4 4 0 0 1-4 4 4 4 0 0 1-4-4V8z"/><path d="M6 8H4"/><path d="M18 8h2"/><path d="M3 17c1.5 0 2-1 2-2 0 1 1.5 2 3 2"/></svg></div><h3 class="feature-title">Кальянная на высоте</h3><p class="feature-text">96% гостей ставят кальян выше пятёрки. 9 видов от Стандарта до Кальяна на фрукте.</p></article>
-<article class="feature reveal"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 8l-3-1-1.5-2.5L14 5l-4-1L7 8 4 9"/><path d="M2 12l2-2 4 1h4l3 1 3-1 4 2v6l-3 1-1-2-4 1-5-1-3 2-3-1z"/></svg></div><h3 class="feature-title">Можно с собакой</h3><p class="feature-text">Ваш питомец — желанный гость. Чувствуйте себя как дома вместе с нами.</p></article>
-<article class="feature reveal"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 8h12l1 13H5L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg></div><h3 class="feature-title">Еда на вынос</h3><p class="feature-text">Заберите любимые блюда с собой — закажите заранее и получите без ожидания.</p></article>
+<article class="feature reveal"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 8l-3-1-1.5-2.5L14 5l-4-1L7 8 4 9"/><path d="M2 12l2-2 4 1h4l3 1 3-1 4 2v6l-3 1-1-2-4 1-5-1-3 2-3-1z"/></svg></div><h3 class="feature-title">Можно с собакой</h3><p class="feature-text">Ваш питомец — желанный гость.</p></article>
+<article class="feature reveal"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 8h12l1 13H5L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg></div><h3 class="feature-title">Еда на вынос</h3><p class="feature-text">Заберите любимые блюда с собой.</p></article>
 </div></div></section>
 
-<!-- MENU -->
 <section class="section section--alt" id="menu"><div class="container">
 <span class="section-kicker reveal">Меню</span>
-<h2 class="section-title reveal">172 позиции —<br>от кухни до чайной карты</h2>
-<p class="section-lead reveal">Полное меню Izzy Hook: кухня, дымное меню, бар, коктейли, напитки и чай. Цены актуальны.</p>
+<h2 class="section-title reveal">172 позиции с фото</h2>
+<p class="section-lead reveal">Фотографии блюд из меню Izzy Hook. 63 позиции с реальными фото от шеф-повара.</p>
 <div class="menu-section-nav reveal" id="menu-sections"></div>
 <div class="menu-subnav reveal" id="menu-subs"></div>
 <div class="menu-grid reveal" id="menu-grid"></div>
-<div class="menu-note reveal"><span>Меню обновляется — актуальная версия на</span> <a href="https://omnom.rest/izzy-hook" target="_blank">omnom.rest/izzy-hook</a></div>
+<div class="menu-note reveal"><span>Полное меню обновляется на</span> <a href="https://omnom.rest/izzy-hook" target="_blank">omnom.rest/izzy-hook</a></div>
 </div></section>
 
 <section class="section" id="gallery"><div class="container">
 <span class="section-kicker reveal">Галерея</span>
 <h2 class="section-title reveal">Загляните внутрь</h2>
 <p class="section-lead reveal">Приглушённый свет, глубокие кресла и тёплая лаунж-атмосфера.</p>
-<div class="gallery-grid reveal" id="gallery-grid"></div>
-</div></section>
+<div class="gallery-grid reveal" id="gallery-grid"></div></div></section>
 
-<section class="section" id="booking"><div class="container">
-<div class="booking-card reveal">
-<div class="booking-glow"></div>
-<div class="booking-inner">
+<section class="section" id="booking"><div class="container"><div class="booking-card reveal"><div class="booking-glow"></div><div class="booking-inner">
 <span class="section-kicker">Бронирование</span>
 <h2 class="booking-title">Столик для вашего вечера</h2>
 <p class="booking-text">Забронируйте место онлайн за пару секунд. Мы сохраним ваш столик, а вы получите код брони.</p>
-<div class="booking-actions">
-<button class="btn btn-primary btn-lg" onclick="openBooking()">Забронировать столик</button>
-<button class="btn btn-outline btn-lg" onclick="openBookingCheck()">Проверить мою бронь</button>
-</div>
+<div class="booking-actions"><button class="btn btn-primary btn-lg" onclick="openBooking()">Забронировать столик</button><button class="btn btn-outline btn-lg" onclick="openBookingCheck()">Проверить мою бронь</button></div>
 <div class="booking-hints"><span><i>✓</i> Сохраняется в браузере</span><span><i>✓</i> Проверка свободных мест</span></div>
 </div></div></div></section>
 
 <section class="section" id="contacts"><div class="container">
-<span class="section-kicker reveal">Контакты</span>
-<h2 class="section-title reveal">Как нас найти</h2>
-<div class="contacts-grid">
-<div class="contacts-info">
-<div class="contact-card reveal"><div class="contact-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></div><div><h3>Адрес</h3><p>Санкт-Петербург, Октябрьская набережная, 34к2</p><p class="contact-card-sub">Остановка «Октябрьская набережная, 38» · 182 м · м. Проспект Большевиков</p></div></div>
-<div class="contact-card reveal"><div class="contact-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div><h3>Часы работы</h3><p>Ежедневно · 13:00 — 02:00</p><p class="contact-card-sub">Удобно для ужинов и вечерних встреч</p></div></div>
-<div class="contact-card reveal"><div class="contact-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 3h4l2 5-2.5 1.5a12 12 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg></div><div><h3>Телефон</h3><p><a href="tel:+79112774545" class="contact-card-link">+7 (911) 277-45-45</a></p><p class="contact-card-sub">Позвоните — поможем с бронированием</p></div></div>
-<div class="contact-card reveal"><div class="contact-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M10 8h4v8h-4z"/><path d="M8 12h8"/></svg></div><div><h3>Мы на связи</h3><p class="contact-card-row">
-<a class="contact-chip" href="https://t.me/noonloungebar" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.6c.3-1.2-.9-2.2-2-1.7L2.7 9.2c-1.2.5-1.1 2.2.1 2.6l4.5 1.4 1.7 5.3c.4 1.1 1.8 1.4 2.6.6l2.4-2.4 4.6 3.4c.9.7 2.2.2 2.4-1l3-14.5zM8.4 12.9l9.3-5.7c.4-.2.8.3.5.6l-7.3 6.9-.3 3.2-2.2-5z"/></svg>Telegram</a>
-<a class="contact-chip" href="https://vk.ru/izzyhook" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 17.5c-6.5 0-10.2-4.5-10.4-12h3.2c.1 5.7 2.6 8.1 4.6 8.6V5.5h3.2v4.9c2-.2 4-2.5 4.7-4.9h3.2c-.5 3-2.6 5.3-4.1 6.2 1.5.7 3.9 2.6 4.8 6.8h-3.3c-.7-2.2-2.4-3.9-4.6-4.1v4.1H13z"/></svg>ВКонтакте</a>
-</p><p class="contact-card-sub">Напишите — ответим в течение пары минут</p></div></div>
+<span class="section-kicker reveal">Контакты</span><h2 class="section-title reveal">Как нас найти</h2>
+<div class="contacts-grid"><div class="contacts-info">
+<div class="contact-card reveal"><div class="contact-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></div><div><h3>Адрес</h3><p>Санкт-Петербург, Октябрьская набережная, 34к2</p><p class="contact-card-sub">м. Проспект Большевиков · 182 м</p></div></div>
+<div class="contact-card reveal"><div class="contact-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div><h3>Часы</h3><p>Ежедневно · 13:00 — 02:00</p></div></div>
+<div class="contact-card reveal"><div class="contact-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 3h4l2 5-2.5 1.5a12 12 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg></div><div><h3>Телефон</h3><p><a href="tel:+79112774545" class="contact-card-link">+7 (911) 277-45-45</a></p></div></div>
+<div class="contact-card reveal"><div class="contact-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg></div><div><h3>Мы на связи</h3><p class="contact-card-row">
+<a class="contact-chip" href="https://t.me/noonloungebar" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.6c.3-1.2-.9-2.2-2-1.7L2.7 9.2c-1.2.5-1.1 2.2.1 2.6l4.5 1.4 1.7 5.3c.4 1.1 1.8 1.4 2.6.6l2.4-2.4 4.6 3.4c.9.7 2.2.2 2.4-1l3-14.5z"/></svg>Telegram</a>
+<a class="contact-chip" href="https://vk.ru/izzyhook" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 17.5c-6.5 0-10.2-4.5-10.4-12h3.2c.1 5.7 2.6 8.1 4.6 8.6V5.5h3.2v4.9c2-.2 4-2.5 4.7-4.9h3.2c-.5 3-2.6 5.3-4.1 6.2 1.5.7 3.9 2.6 4.8 6.8h-3.3c-.7-2.2-2.4-3.9-4.6-4.1v4.1H13z"/></svg>ВКонтакте</a></p></div></div>
 </div>
-<div class="contacts-map reveal">
-<iframe title="Izzy Hook" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=30.4850%2C59.9026%2C30.5274%2C59.9206&layer=mapnik&marker=59.9116%2C30.5062"></iframe>
-<div class="contacts-map-actions">
-<a class="btn btn-ghost btn-sm" href="https://yandex.ru/maps/-/CTWUz2Y1" target="_blank">Яндекс Карты</a>
-<a class="btn btn-ghost btn-sm" href="https://yandex.ru/maps/-/CTWUz2Y1" target="_blank">Маршрут</a>
-</div></div></div></div></section>
+<div class="contacts-map reveal"><iframe title="Izzy Hook" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=30.4850%2C59.9026%2C30.5274%2C59.9206&layer=mapnik&marker=59.9116%2C30.5062"></iframe>
+<div class="contacts-map-actions"><a class="btn btn-ghost btn-sm" href="https://yandex.ru/maps/-/CTWUz2Y1" target="_blank">Яндекс Карты</a><a class="btn btn-ghost btn-sm" href="https://yandex.ru/maps/-/CTWUz2Y1" target="_blank">Маршрут</a></div></div>
+</div></div></section>
 
 <footer class="footer"><div class="container footer-inner">
-<div class="footer-brand"><span class="footer-logo">IZZY HOOK</span><p>Кальянная · ресторан · бар на Октябрьской набережной. Рейтинг 5.0 · «Хорошее место 2026» · 172 позиции меню.</p></div>
+<div class="footer-brand"><span class="footer-logo">IZZY HOOK</span><p>Кальянная · ресторан · бар. Рейтинг 5.0 · 172 позиции меню.</p></div>
 <div class="footer-links"><a href="#about">О кафе</a><a href="#menu">Меню</a><a href="#gallery">Галерея</a><a href="#contacts">Контакты</a></div>
 <div class="footer-social">
-<a class="footer-chip" href="https://t.me/noonloungebar" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.6c.3-1.2-.9-2.2-2-1.7L2.7 9.2c-1.2.5-1.1 2.2.1 2.6l4.5 1.4 1.7 5.3c.4 1.1 1.8 1.4 2.6.6l2.4-2.4 4.6 3.4c.9.7 2.2.2 2.4-1l3-14.5zM8.4 12.9l9.3-5.7c.4-.2.8.3.5.6l-7.3 6.9-.3 3.2-2.2-5z"/></svg>Telegram</a>
+<a class="footer-chip" href="https://t.me/noonloungebar" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.6c.3-1.2-.9-2.2-2-1.7L2.7 9.2c-1.2.5-1.1 2.2.1 2.6l4.5 1.4 1.7 5.3c.4 1.1 1.8 1.4 2.6.6l2.4-2.4 4.6 3.4c.9.7 2.2.2 2.4-1l3-14.5z"/></svg>Telegram</a>
 <a class="footer-chip" href="https://vk.ru/izzyhook" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 17.5c-6.5 0-10.2-4.5-10.4-12h3.2c.1 5.7 2.6 8.1 4.6 8.6V5.5h3.2v4.9c2-.2 4-2.5 4.7-4.9h3.2c-.5 3-2.6 5.3-4.1 6.2 1.5.7 3.9 2.6 4.8 6.8h-3.3c-.7-2.2-2.4-3.9-4.6-4.1v4.1H13z"/></svg>ВКонтакте</a>
 </div></div>
-<div class="container footer-bottom"><span>© <span id="year"></span> Izzy Hook</span><span>Сделано с теплом для уютных вечеров</span></div></footer>
+<div class="container footer-bottom"><span>© <span id="year"></span> Izzy Hook</span><span>Сделано с теплом</span></div></footer>
 
 <div class="modal" id="booking-modal">
-<div class="modal-backdrop" onclick="closeModal()"></div>
-<div class="modal-window">
-<button class="modal-close" onclick="closeModal()">✕</button>
+<div class="modal-backdrop" onclick="closeModal()"></div><div class="modal-window"><button class="modal-close" onclick="closeModal()">✕</button>
 <div class="modal-view active" id="view-form">
-<span class="section-kicker">Бронирование</span>
-<h3 class="modal-title">Забронировать столик</h3>
-<p class="modal-subtitle">Заполните форму — и столик будет ждать вас.</p>
+<span class="section-kicker">Бронирование</span><h3 class="modal-title">Забронировать столик</h3><p class="modal-subtitle">Заполните форму — и столик будет ждать вас.</p>
 <form id="booking-form" onsubmit="handleBooking(event)">
-<div class="form-row">
-<label class="form-field"><span class="form-label">Имя</span><input type="text" name="name" placeholder="Как к вам обращаться" autocomplete="name" required><span class="form-error"></span></label>
-<label class="form-field"><span class="form-label">Телефон</span><input type="tel" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required><span class="form-error"></span></label>
-</div>
-<div class="form-row">
-<label class="form-field"><span class="form-label">Дата</span><input type="date" name="date" required><span class="form-error"></span></label>
-<label class="form-field"><span class="form-label">Время</span><select name="time" required><option value="">Выберите время</option></select><span class="form-error"></span></label>
-</div>
-<div class="form-row">
-<label class="form-field"><span class="form-label">Гостей</span><select name="guests" required><option value="2">2 гостя</option><option value="1">1 гость</option><option value="3">3 гостя</option><option value="4">4 гостя</option><option value="5">5 гостей</option><option value="6">6 гостей</option><option value="8">8 гостей</option><option value="10">10 гостей</option></select><span class="form-error"></span></label>
-<label class="form-field"><span class="form-label">Комментарий</span><input type="text" name="comment" placeholder="Например: столик у окна"></label>
-</div>
-<button type="submit" class="btn btn-primary btn-block btn-lg">Забронировать</button>
-<p class="form-hint">* Места ограничены — мы проверим свободные слоты.</p>
-</form>
-<button class="modal-switch" onclick="switchToCheck()">У меня уже есть бронь — проверить</button>
-</div>
-<div class="modal-view" id="view-success">
-<div class="modal-success-icon">✓</div>
-<h3 class="modal-title">Столик забронирован!</h3>
-<p class="modal-subtitle" id="success-details"></p>
-<div class="modal-code"><span>Ваш код брони</span><strong id="success-code">IH-XXXX</strong></div>
-<p class="modal-note">Сохраните код — его нужно назвать при входе.</p>
-<a class="btn btn-primary btn-block" href="https://t.me/noonloungebar" target="_blank">Получить подтверждение в Telegram</a>
-<button class="btn btn-ghost btn-block modal-again" onclick="closeModal()">Готово</button>
-</div>
-<div class="modal-view" id="view-check">
-<span class="section-kicker">Проверка брони</span>
-<h3 class="modal-title">Найти мою бронь</h3>
-<p class="modal-subtitle">Введите телефон или код брони — покажем ваши записи.</p>
-<form onsubmit="handleCheck(event)">
-<label class="form-field" style="margin-bottom:16px"><span class="form-label">Телефон или код брони</span><input type="text" name="query" placeholder="+7 (___) ___-__-__ или IH-XXXX" required><span class="form-error"></span></label>
-<button type="submit" class="btn btn-primary btn-block">Найти</button>
-</form>
-<div id="check-results" style="margin-top:16px"></div>
-<button class="modal-switch" onclick="switchToBook()">Забронировать столик</button>
-</div>
+<div class="form-row"><label class="form-field"><span class="form-label">Имя</span><input type="text" name="name" placeholder="Как к вам обращаться" required><span class="form-error"></span></label><label class="form-field"><span class="form-label">Телефон</span><input type="tel" name="phone" placeholder="+7 (___) ___-__-__" required><span class="form-error"></span></label></div>
+<div class="form-row"><label class="form-field"><span class="form-label">Дата</span><input type="date" name="date" required><span class="form-error"></span></label><label class="form-field"><span class="form-label">Время</span><select name="time" required><option value="">Выберите время</option></select><span class="form-error"></span></label></div>
+<div class="form-row"><label class="form-field"><span class="form-label">Гостей</span><select name="guests" required><option value="2">2 гостя</option><option value="1">1 гость</option><option value="3">3 гостя</option><option value="4">4 гостя</option><option value="5">5 гостей</option><option value="6">6 гостей</option><option value="8">8 гостей</option><option value="10">10 гостей</option></select><span class="form-error"></span></label><label class="form-field"><span class="form-label">Комментарий</span><input type="text" name="comment" placeholder="Столик у окна"></label></div>
+<button type="submit" class="btn btn-primary btn-block btn-lg">Забронировать</button><p class="form-hint">* Места ограничены</p></form>
+<button class="modal-switch" onclick="switchToCheck()">У меня уже есть бронь</button></div>
+<div class="modal-view" id="view-success"><div class="modal-success-icon">✓</div><h3 class="modal-title">Столик забронирован!</h3><p class="modal-subtitle" id="success-details"></p><div class="modal-code"><span>Код брони</span><strong id="success-code">IH-XXXX</strong></div><p class="modal-note">Сохраните код — его нужно назвать при входе.</p><a class="btn btn-primary btn-block" href="https://t.me/noonloungebar" target="_blank">Получить подтверждение в Telegram</a><button class="btn btn-ghost btn-block modal-again" onclick="closeModal()">Готово</button></div>
+<div class="modal-view" id="view-check"><span class="section-kicker">Проверка брони</span><h3 class="modal-title">Найти мою бронь</h3><p class="modal-subtitle">Введите телефон или код брони.</p><form onsubmit="handleCheck(event)"><label class="form-field" style="margin-bottom:16px"><span class="form-label">Телефон или код брони</span><input type="text" name="query" placeholder="+7 или IH-XXXX" required></label><button type="submit" class="btn btn-primary btn-block">Найти</button></form><div id="check-results" style="margin-top:16px"></div><button class="modal-switch" onclick="switchToBook()">Забронировать столик</button></div>
 </div></div>
 
 <div class="toast" id="toast"></div>
-<a class="fab" href="https://t.me/noonloungebar" target="_blank" aria-label="Telegram"><span class="fab-pulse"></span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.6c.3-1.2-.9-2.2-2-1.7L2.7 9.2c-1.2.5-1.1 2.2.1 2.6l4.5 1.4 1.7 5.3c.4 1.1 1.8 1.4 2.6.6l2.4-2.4 4.6 3.4c.9.7 2.2.2 2.4-1l3-14.5zM8.4 12.9l9.3-5.7c.4-.2.8.3.5.6l-7.3 6.9-.3 3.2-2.2-5z"/></svg></a>
+<a class="fab" href="https://t.me/noonloungebar" target="_blank" aria-label="Telegram"><span class="fab-pulse"></span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.6c.3-1.2-.9-2.2-2-1.7L2.7 9.2c-1.2.5-1.1 2.2.1 2.6l4.5 1.4 1.7 5.3c.4 1.1 1.8 1.4 2.6.6l2.4-2.4 4.6 3.4c.9.7 2.2.2 2.4-1l3-14.5z"/></svg></a>
 
 <script>
-// ====== FULL MENU DATA ======
-const MENU = [
-{id:"kitchen",name:"Кухня",subs:[
+// IMAGE MAP — 63 food photos from omnom.rest
+const IMG={
+"Английский завтрак":"https://omnom.rest/upload/resize_cache/iblock/541/500_500_283c336f9c1f0202446e77efdbabeaac9/nuzs9gmvbt33kvwqaz93zgv3bjur8tix.jpeg",
+"Каша овсяная":"https://omnom.rest/upload/resize_cache/iblock/e87/500_500_283c336f9c1f0202446e77efdbabeaac9/1wka5lhwm7s4s5sfgc0uan1nrq9zf1ts.JPG",
+"Омлет из трех яиц":"https://omnom.rest/upload/resize_cache/iblock/4f2/500_500_283c336f9c1f0202446e77efdbabeaac9/hcdl8pb97dlrl4yyhgc8jmsyy1xa5y8n.JPG",
+"Шакшука":"https://omnom.rest/upload/resize_cache/iblock/a21/500_500_283c336f9c1f0202446e77efdbabeaac9/zozpimc80m86b25g0etppcbwtteu50a4.jpeg",
+"Яичница из трех яиц":"https://omnom.rest/upload/resize_cache/iblock/31e/500_500_283c336f9c1f0202446e77efdbabeaac9/evmrzz00j1b1454q68vbi6qmhqky3tdm.JPG",
+"Ветчина грибы римская":"https://omnom.rest/upload/resize_cache/iblock/c38/500_500_283c336f9c1f0202446e77efdbabeaac9/ue50g2tz0vevplvqthse871vhltbrv98.jpg",
+"Груша горгонзолла римская":"https://omnom.rest/upload/resize_cache/iblock/e83/500_500_283c336f9c1f0202446e77efdbabeaac9/hjng4b5k0a7oi9g2o4ol8d3llgn55zq1.jpg",
+"Маргарита римская":"https://omnom.rest/upload/resize_cache/iblock/2fa/500_500_283c336f9c1f0202446e77efdbabeaac9/1gu50v4oo4k9bu08w5bab0450nmgoezx.jpg",
+"Пепперони римская":"https://omnom.rest/upload/resize_cache/iblock/b4d/500_500_283c336f9c1f0202446e77efdbabeaac9/3vhdwkxww9quggnakhbd3ss9ocmyzxg2.jpg",
+"Поло песто римская":"https://omnom.rest/upload/resize_cache/iblock/e02/500_500_283c336f9c1f0202446e77efdbabeaac9/v32306x1ra2e1507r5avtxtqwb1bd4fs.jpg",
+"Сливочный бекон римская":"https://omnom.rest/upload/resize_cache/iblock/0a9/500_500_283c336f9c1f0202446e77efdbabeaac9/jl031bmx68vserk29pph7050nncb57iq.jpg",
+"Сырная римская":"https://omnom.rest/upload/resize_cache/iblock/687/500_500_283c336f9c1f0202446e77efdbabeaac9/62z12s2l2m1qa7xhqddbqyfjukjdpt7o.jpg",
+"Хантер римская":"https://omnom.rest/upload/resize_cache/iblock/aef/500_500_283c336f9c1f0202446e77efdbabeaac9/8rb1o9q08a9ny9xzxztn8l7fokkzghcn.jpg",
+"Картофель фри":"https://omnom.rest/upload/resize_cache/iblock/612/500_500_283c336f9c1f0202446e77efdbabeaac9/7k165pvgm92xqthni2hlrwdbvwyuxazf.JPG",
+"Креветки темпура":"https://omnom.rest/upload/resize_cache/iblock/b39/500_500_283c336f9c1f0202446e77efdbabeaac9/6efv4y3vj6cwe6sqcqzquza778uw4xzw.JPG",
+"Куриные стрипсы":"https://omnom.rest/upload/resize_cache/iblock/e80/500_500_283c336f9c1f0202446e77efdbabeaac9/sif4343no7ytsus6okpu5e5xlppf4sp1.JPG",
+"Луковые колечки":"https://omnom.rest/upload/resize_cache/iblock/479/500_500_283c336f9c1f0202446e77efdbabeaac9/2h4xwgkt2wzpd05ydxb5h5kt6jzu81vb.JPG",
+"Перчики халапенью фри":"https://omnom.rest/upload/resize_cache/iblock/85d/500_500_283c336f9c1f0202446e77efdbabeaac9/hyiv6tw7t926zfepntdu9doyx0bfy1hs.JPG",
+"Сырные палочки":"https://omnom.rest/upload/resize_cache/iblock/ffb/500_500_283c336f9c1f0202446e77efdbabeaac9/wahi5kj4o0ar1h544molr0a3z0pf8zqg.JPG",
+"Салат греческий":"https://omnom.rest/upload/resize_cache/iblock/785/500_500_283c336f9c1f0202446e77efdbabeaac9/f50y0a70ogio2uhqti7a7sk74dz7i06j.JPG",
+"Салат овощной":"https://omnom.rest/upload/resize_cache/iblock/3e0/500_500_283c336f9c1f0202446e77efdbabeaac9/1xep8yjrekj6nqxy4rr19puixc7byafn.JPG",
+"Салат с хрустящим баклажаном":"https://omnom.rest/upload/resize_cache/iblock/e01/500_500_283c336f9c1f0202446e77efdbabeaac9/dz8o6l6sihwdssdpdok0rlfs4xaeh3ux.JPG",
+"Цезарь с креветками":"https://omnom.rest/upload/resize_cache/iblock/039/500_500_283c336f9c1f0202446e77efdbabeaac9/d7h4baz8gr59r2cvo618wf5vkexudll9.JPG",
+"Цезарь с куриной грудкой":"https://omnom.rest/upload/resize_cache/iblock/aa6/500_500_283c336f9c1f0202446e77efdbabeaac9/6apgaiy8wg99jpdbxiiab1qne0bsogu0.JPG",
+"Сэндвич с ветчиной":"https://omnom.rest/upload/resize_cache/iblock/15e/500_500_283c336f9c1f0202446e77efdbabeaac9/zlg1sjou2gzrnbi6jxn6btmgwf965pqq.jpg",
+"Сэндвич с куриной грудкой и жареным яйцом":"https://omnom.rest/upload/resize_cache/iblock/3f8/500_500_283c336f9c1f0202446e77efdbabeaac9/9hxpzetm0ybdaek2pu9xvsampl0hkaww.jpg",
+"Борщ":"https://omnom.rest/upload/resize_cache/iblock/596/500_500_283c336f9c1f0202446e77efdbabeaac9/fcq4dwwbdja88v4t5c44dgrd1hxqygy7.jpg",
+"Грибной крем-суп":"https://omnom.rest/upload/resize_cache/iblock/867/500_500_283c336f9c1f0202446e77efdbabeaac9/6e09spbd3it4dmjoxn6osyp4pshbbrxl.jpg",
+"Куриный суп":"https://omnom.rest/upload/resize_cache/iblock/149/500_500_283c336f9c1f0202446e77efdbabeaac9/mr2o0hl4v9sn0189jrub8og68v9n5hhc.jpg",
+"Бургер с котлеткой из мраморной говядины":"https://omnom.rest/upload/resize_cache/iblock/a41/500_500_283c336f9c1f0202446e77efdbabeaac9/umrryaabvbk85vlr91zd3m0qmpsjyphm.JPG",
+"Бургер с куриными стрипсами":"https://omnom.rest/upload/resize_cache/iblock/586/500_500_283c336f9c1f0202446e77efdbabeaac9/rsf2jlwhp2vnsm0neqf1jgjh0hwa0r8v.JPG",
+"Бургер с рыбной котлеткой":"https://omnom.rest/upload/resize_cache/iblock/aec/500_500_283c336f9c1f0202446e77efdbabeaac9/q9221t2dyxs17l9cjo262pvnqu1um4dx.JPG",
+"Паста карбонара ":"https://omnom.rest/upload/resize_cache/iblock/1f6/500_500_283c336f9c1f0202446e77efdbabeaac9/zigvdxfenmtwhjbn3grzvrfz3q35n4o3.JPG",
+"Паста с грибами":"https://omnom.rest/upload/resize_cache/iblock/1d1/500_500_283c336f9c1f0202446e77efdbabeaac9/d7pb842l07w45fdyq532b4dq60i6ttic.jpg",
+"Паста с морепродуктами":"https://omnom.rest/upload/resize_cache/iblock/ec1/500_500_283c336f9c1f0202446e77efdbabeaac9/nabt7704s2grkajidtih55hbd029pmya.JPG",
+"Бефстроганов":"https://omnom.rest/upload/resize_cache/iblock/288/500_500_283c336f9c1f0202446e77efdbabeaac9/oo29h4vgu6rqz5h8xo8xxlsl0ekl039v.JPG",
+"Треска с овощами гриль":"https://omnom.rest/upload/resize_cache/iblock/b89/500_500_283c336f9c1f0202446e77efdbabeaac9/gjz33h391frtd25dsgtuylsqs76guyn5.jpeg",
+"Барбекю":"https://omnom.rest/upload/resize_cache/iblock/c95/500_500_283c336f9c1f0202446e77efdbabeaac9/5oa27gbn9bi1hzqlgmkf5ozvmm5w2dj4.jpg",
+"Кетчуп":"https://omnom.rest/upload/resize_cache/iblock/08b/500_500_283c336f9c1f0202446e77efdbabeaac9/4lxj96vv90ox966z9u1q16flsxv1vdwi.jpg",
+"Сладкий чили":"https://omnom.rest/upload/resize_cache/iblock/11e/500_500_283c336f9c1f0202446e77efdbabeaac9/c2j28k84kfu4wiqh6f358ytwtcaf8x5l.jpg",
+"Сырный":"https://omnom.rest/upload/resize_cache/iblock/df4/500_500_283c336f9c1f0202446e77efdbabeaac9/e295dkbl9ybhgkyu4l4i6yu2dg3cvvav.jpg",
+"Ягодный":"https://omnom.rest/upload/resize_cache/iblock/09b/500_500_283c336f9c1f0202446e77efdbabeaac9/6usulz1b3uf74x8w4ipu4zry92qjlwvb.jpg",
+"Арахис":"https://omnom.rest/upload/resize_cache/iblock/dd4/500_500_283c336f9c1f0202446e77efdbabeaac9/f2g6mwrbnegck3fxq6ubje61c5sbxpjh.jpg",
+"Вяленое мясо индейки":"https://omnom.rest/upload/resize_cache/iblock/e73/500_500_283c336f9c1f0202446e77efdbabeaac9/jup87eawh4jqnhxu70pgbpfrlzm0shju.jpg",
+"Вяленое мясо курицы":"https://omnom.rest/upload/resize_cache/iblock/265/500_500_283c336f9c1f0202446e77efdbabeaac9/6a0zrfw6s54jz63aj665itgmc0nv2aev.jpg",
+"Миндаль барбекю":"https://omnom.rest/upload/resize_cache/iblock/689/500_500_283c336f9c1f0202446e77efdbabeaac9/tx7kaivkfvdh9ury75829despo2r7h21.jpg",
+"Фисташки":"https://omnom.rest/upload/resize_cache/iblock/54c/500_500_283c336f9c1f0202446e77efdbabeaac9/qclze2jfdyouyb709upai4lm5gk9uv08.jpg",
+"Фисташки барбекю":"https://omnom.rest/upload/resize_cache/iblock/43f/500_500_283c336f9c1f0202446e77efdbabeaac9/v7erpl3ugs28acoklv9nxttsk784g8qj.jpg",
+"Шоколадный фондан":"https://omnom.rest/upload/resize_cache/iblock/7f2/500_500_283c336f9c1f0202446e77efdbabeaac9/7ny2v7zhwimf5wn1w2wd6kd21c8y7s61.JPG",
+"Апероль сприц":"https://omnom.rest/upload/resize_cache/iblock/2b1/500_500_283c336f9c1f0202446e77efdbabeaac9/tg3fp08hwjit1u2hu4bvfsuj1dnwz9ia.jpg",
+"Белый русский":"https://omnom.rest/upload/resize_cache/iblock/83e/500_500_283c336f9c1f0202446e77efdbabeaac9/ip2wfn7nxk4qb6g2hlr9n77wuwcee9az.jpg",
+"Вайлдберис":"https://omnom.rest/upload/resize_cache/iblock/5cb/500_500_283c336f9c1f0202446e77efdbabeaac9/38zfpuzw4h1pkzzce0a8hjwafei3cws1.jpg",
+"Виски кола":"https://omnom.rest/upload/resize_cache/iblock/91d/500_500_283c336f9c1f0202446e77efdbabeaac9/4zho2j2regd52adchk5trkkdxet3yj2e.jpg",
+"Виски Сауэр":"https://omnom.rest/upload/resize_cache/iblock/a10/500_500_283c336f9c1f0202446e77efdbabeaac9/90nie0fuv0t41yvjfyrmup82289esp5v.jpg",
+"Джин тоник":"https://omnom.rest/upload/resize_cache/iblock/db2/500_500_283c336f9c1f0202446e77efdbabeaac9/r7fuuz1ocrack3en1n7xwmj0q4wovz27.jpg",
+"Куба либре":"https://omnom.rest/upload/resize_cache/iblock/fe9/500_500_283c336f9c1f0202446e77efdbabeaac9/00sn5ygns64wccmttis8tlox5kr7t7mo.jpg",
+"Лонг Айленд":"https://omnom.rest/upload/resize_cache/iblock/9eb/500_500_283c336f9c1f0202446e77efdbabeaac9/u3ntp8lhdleq8vrdrho1xh0n2x32xohu.jpg",
+"Маргарита":"https://omnom.rest/upload/resize_cache/iblock/c10/500_500_283c336f9c1f0202446e77efdbabeaac9/jaypf618y1xinmcz5zshjqq39n0vlkst.jpg",
+"Мартини Фиеро Тоник":"https://omnom.rest/upload/resize_cache/iblock/224/500_500_283c336f9c1f0202446e77efdbabeaac9/jwb893xcvel4bq03pvisd3vkyfrf4ozt.jpg",
+"Негрони":"https://omnom.rest/upload/resize_cache/iblock/a20/500_500_283c336f9c1f0202446e77efdbabeaac9/m6fs0wfc0fyunun55p1a0z8lsu71si2x.jpg",
+"Саншайн":"https://omnom.rest/upload/resize_cache/iblock/df4/500_500_283c336f9c1f0202446e77efdbabeaac9/gzt7dcgjwkzev2urczssjnmtyaezsehh.jpg",
+"Текила санрайз":"https://omnom.rest/upload/resize_cache/iblock/20c/500_500_283c336f9c1f0202446e77efdbabeaac9/izlp9pt7pgaf1w5e90zqyjt71uuawv73.jpg",
+"Френч 75":"https://omnom.rest/upload/resize_cache/iblock/c9b/500_500_283c336f9c1f0202446e77efdbabeaac9/e8xzjocn27drg0w33h1n02c339ayxwj5.jpg"
+};
+
+const MENU=[{id:"kitchen",name:"Кухня",subs:[
 {name:"Завтраки",items:[
-{name:"Английский завтрак",price:630,desc:"Яйца, бекон, сосиски говяжьи, томаты черри, фасоль в томатном соусе"},
-{name:"Каша овсяная",price:420,vol:"300г"},
-{name:"Омлет из трех яиц",price:420,desc:"Подается с хрустящими тостом и овощным салатом"},
-{name:"Шакшука",price:520,desc:"Яйца, томаты, болгарский перец, лук, сыр фета, томатная паста, зелень"},
-{name:"Яичница из трех яиц",price:390,desc:"Подается с хрустящими тостом и овощным салатом"}]},
+{n:"Английский завтрак",p:630,d:"Яйца, бекон, сосиски говяжьи, томаты черри, фасоль в томатном соусе"},
+{n:"Каша овсяная",p:420,v:"300г"},{n:"Омлет из трех яиц",p:420,d:"Подается с хрустящими тостом и овощным салатом"},
+{n:"Шакшука",p:520,d:"Яйца, томаты, болгарский перец, лук, сыр фета, томатная паста, зелень"},
+{n:"Яичница из трех яиц",p:390,d:"Подается с хрустящими тостом и овощным салатом"}]},
 {name:"Пицца",items:[
-{name:"Ветчина грибы римская",price:820,desc:"Ветчина из индейки, вешенки, моцарелла, соус наполи"},
-{name:"Груша горгонзолла римская",price:870,desc:"Горгонзола и моцарелла, груша, грецкий орех, соус крем-чиз"},
-{name:"Маргарита римская",price:790,desc:"Томаты черри, моцарелла, базилик, соусы песто и наполи"},
-{name:"Пепперони римская",price:810,desc:"Колбаски пепперони, моцарелла, перец чили, соус наполи"},
-{name:"Поло песто римская",price:830,desc:"Копченая курица, лук красный, каперсы, моцарелла, соусы песто и крем-чиз"},
-{name:"Сливочный бекон римская",price:840,desc:"Бекон, пармезан и моцарелла, лук красный, желток, соус крем-чиз"},
-{name:"Сырная римская",price:830,desc:"Дор блю, камамбер, моцарелла, грецкий орех, мёд, соус крем-чиз"},
-{name:"Хантер римская",price:840,desc:"Ветчина, пепперони, бекон, моцарелла, охотничьи колбаски, огурец маринованный, лук фри, соус наполи"}]},
+{n:"Ветчина грибы римская",p:820,d:"Ветчина из индейки, вешенки, моцарелла, соус наполи"},
+{n:"Груша горгонзолла римская",p:870,d:"Горгонзола и моцарелла, груша, грецкий орех, соус крем-чиз"},
+{n:"Маргарита римская",p:790,d:"Томаты черри, моцарелла, базилик, соусы песто и наполи"},
+{n:"Пепперони римская",p:810,d:"Колбаски пепперони, моцарелла, перец чили, соус наполи"},
+{n:"Поло песто римская",p:830,d:"Копченая курица, лук красный, каперсы, моцарелла, соусы песто и крем-чиз"},
+{n:"Сливочный бекон римская",p:840,d:"Бекон, пармезан и моцарелла, лук красный, желток, соус крем-чиз"},
+{n:"Сырная римская",p:830,d:"Дор блю, камамбер, моцарелла, грецкий орех, мёд, соус крем-чиз"},
+{n:"Хантер римская",p:840,d:"Ветчина, пепперони, бекон, моцарелла, охотничьи колбаски, огурец, лук фри"}]},
 {name:"Закуски",items:[
-{name:"Бейби-картофель",price:330},{name:"Картофель фри",price:330},
-{name:"Креветки темпура",price:690},{name:"Куриные стрипсы",price:420},
-{name:"Луковые колечки",price:380},{name:"Перчики халапенью фри",price:340,desc:"Перчики халапенью во фритюре в сладком чили соусе"},
-{name:"Сырные палочки",price:430}]},
+{n:"Бейби-картофель",p:330},{n:"Картофель фри",p:330},{n:"Креветки темпура",p:690},
+{n:"Куриные стрипсы",p:420},{n:"Луковые колечки",p:380},{n:"Перчики халапенью фри",p:340,d:"Перчики халапенью во фритюре в сладком чили соусе"},
+{n:"Сырные палочки",p:430}]},
 {name:"Салаты",items:[
-{name:"Деревенский салат",price:430,desc:"Огурцы, помидоры, перец, сметана, лук, зелень"},
-{name:"Салат греческий",price:520,desc:"Томат, огурец, перец болгарский, салат айсберг, масло оливковое"},
-{name:"Салат овощной",price:420,desc:"Томат, огурец, перец болгарский, масло оливковое"},
-{name:"Салат с хрустящим баклажаном",price:540,desc:"Хрустящий баклажан, томаты, мягкий сыр, фирменный соус, мята, петрушка, семечки"},
-{name:"Цезарь с креветками",price:680,desc:"Креветки, томаты черри, пармезан, микс айсберга и ромейна, соус цезарь, сухарики"},
-{name:"Цезарь с куриной грудкой",price:570,desc:"Копченая курица, томаты черри, яйцо, пармезан, микс салата, соус цезарь, сухарики"}]},
+{n:"Деревенский салат",p:430,d:"Огурцы, помидоры, перец, сметана, лук, зелень"},
+{n:"Салат греческий",p:520,d:"Томат, огурец, перец болгарский, салат айсберг, масло оливковое"},
+{n:"Салат овощной",p:420,d:"Томат, огурец, перец болгарский, масло оливковое"},
+{n:"Салат с хрустящим баклажаном",p:540,d:"Хрустящий баклажан, томаты, мягкий сыр, фирменный соус, мята, петрушка, семечки"},
+{n:"Цезарь с креветками",p:680,d:"Креветки, томаты черри, пармезан, микс салата, соус цезарь, сухарики"},
+{n:"Цезарь с куриной грудкой",p:570,d:"Копченая курица, томаты черри, яйцо, пармезан, соус цезарь, сухарики"}]},
 {name:"Сэндвичи",items:[
-{name:"Сэндвич с ветчиной",price:420},
-{name:"Сэндвич с куриной грудкой и жареным яйцом",price:430}]},
+{n:"Сэндвич с ветчиной",p:420},{n:"Сэндвич с куриной грудкой и жареным яйцом",p:430}]},
 {name:"Супы",items:[
-{name:"Борщ",price:440},{name:"Грибной крем-суп",price:460},{name:"Куриный суп",price:380},
-{name:"Окрошка с ветчиной на кефире/квасе",price:490},{name:"Окрошка с говядиной на кефире/квасе",price:590}]},
+{n:"Борщ",p:440},{n:"Грибной крем-суп",p:460},{n:"Куриный суп",p:380},
+{n:"Окрошка с ветчиной на кефире/квасе",p:490},{n:"Окрошка с говядиной на кефире/квасе",p:590}]},
 {name:"Бургеры",items:[
-{name:"Бургер с котлеткой из мраморной говядины",price:790,desc:"Говяжья котлетка из мраморной говядины, томаты, маринованные огурчики, салат айсберг и фирменный соус. Подается с картофелем фри"},
-{name:"Бургер с куриными стрипсами",price:650,desc:"Куриные стрипсы, томаты, маринованные огурчики, салат айсберг и фирменный соус. Подается с картофелем фри"},
-{name:"Бургер с рыбной котлеткой",price:590,desc:"Рыбная котлетка в панировке, томаты, маринованные огурчики, салат айсберг и фирменный соус. Подается с картофелем фри"}]},
+{n:"Бургер с котлеткой из мраморной говядины",p:790,d:"Говяжья котлетка из мраморной говядины, томаты, маринованные огурчики, салат айсберг и фирменный соус. С картофелем фри"},
+{n:"Бургер с куриными стрипсами",p:650,d:"Куриные стрипсы, томаты, маринованные огурчики, салат айсберг и фирменный соус. С картофелем фри"},
+{n:"Бургер с рыбной котлеткой",p:590,d:"Рыбная котлетка в панировке, томаты, маринованные огурчики, салат айсберг и фирменный соус. С картофелем фри"}]},
 {name:"Паста",items:[
-{name:"Паста карбонара",price:580},{name:"Паста с грибами",price:540},{name:"Паста с морепродуктами",price:810}]},
+{n:"Паста карбонара ",p:580},{n:"Паста с грибами",p:540},{n:"Паста с морепродуктами",p:810}]},
 {name:"Горячее",items:[
-{name:"Бефстроганов",price:690,desc:"Котлета из мраморной говядины, яйцо, бейби-картофель «Айдахо»"},
-{name:"Бифштекс с бейби-картофелем",price:590,desc:"Котлета из мраморной говядины, яйцо, бейби-картофель «Айдахо»"},
-{name:"Куриный шницель с пюре",price:510},
-{name:"Треска с овощами гриль",price:780,desc:"Треска, перец болгарский, томаты, баклажан, тыквенное пюре"}]},
+{n:"Бефстроганов",p:690,d:"Котлета из мраморной говядины, яйцо, бейби-картофель «Айдахо»"},
+{n:"Бифштекс с бейби-картофелем",p:590},{n:"Куриный шницель с пюре",p:510},
+{n:"Треска с овощами гриль",p:780,d:"Треска, перец болгарский, томаты, баклажан, тыквенное пюре"}]},
 {name:"Соусы",items:[
-{name:"Барбекю",price:80,vol:"50 гр"},{name:"Биг тейсти",price:80,vol:"50 гр"},{name:"Кетчуп",price:80,vol:"50 гр"},
-{name:"Сладкий чили",price:80,vol:"50 гр"},{name:"Сырный",price:80,vol:"50 гр"},{name:"Ягодный",price:80,vol:"50 гр"}]},
+{n:"Барбекю",p:80,v:"50 гр"},{n:"Биг тейсти",p:80,v:"50 гр"},{n:"Кетчуп",p:80,v:"50 гр"},
+{n:"Сладкий чили",p:80,v:"50 гр"},{n:"Сырный",p:80,v:"50 гр"},{n:"Ягодный",p:80,v:"50 гр"}]},
 {name:"Снеки",items:[
-{name:"Арахис",price:"180/250",vol:"50/100гр"},{name:"Вяленое мясо индейки",price:390,vol:"50гр"},
-{name:"Вяленое мясо курицы",price:390,vol:"50гр"},{name:"Миндаль барбекю",price:"250/450",vol:"50/100гр"},
-{name:"Сет снеков",price:850,vol:"195г",desc:"Вяленое мясо (курица, индейка, миндаль, арахис, фисташки)"},
-{name:"Фисташки",price:"280/480",vol:"50/100гр"},{name:"Фисташки барбекю",price:"290/490",vol:"50/100гр"},
-{name:"Чипсы",price:210,vol:"50гр"}]},
-{name:"Десерты",items:[
-{name:"Шоколадный фондан",price:410}]}
-]},
-{id:"hookah",name:"Дымное меню",subs:[
-{name:"Кальян",items:[
-{name:"Кальян стандарт",price:1500,desc:"Табаки: Must Have, Starline, Burn, Spectrum, Khan Burley, Element, Dark Side, Trofimoffs и др."},
-{name:"Кальян премиум",price:1700,desc:"Табаки: Dogma, Bonche"},
-{name:"Кальян элит",price:1900,desc:"Парфюмированные табаки. Подробнее у кальянного мастера"},
-{name:"Кальян на фрукте",price:2300},
-{name:"Бизнес перекур стандарт",price:1200,desc:"С 13:00 до 18:00. Кальян + чай (зелёный, чёрный, Эрл грей, черный с чабрецом, вишнёвый пунш, нахальный фрукт)"},
-{name:"Бизнес перекур премиум",price:1400,desc:"С 13:00 до 18:00. Кальян + чай"},
-{name:"Перезабивка стандарт",price:1100,desc:"Второй кальян в чеке. Скидки не суммируются с бизнес перекуром"},
-{name:"Перезабивка премиум",price:1300,desc:"Второй кальян в чеке"},
-{name:"Перезабивка элит",price:1400,desc:"Скидки не суммируются с бизнес перекуром"}]}
-]},
-{id:"drinks",name:"Напитки",subs:[
-{name:"Вода",items:[{name:"Вода газ/негаз",price:260,vol:"0,5"},{name:"Кокосовая вода",price:310,vol:"0,33"}]},
-{name:"Газировка",items:[
-{name:"Coca-Cola",price:280,vol:"0,25/0,33"},{name:"Fanta",price:280,vol:"0,33"},{name:"Sprite",price:280,vol:"0,33"},
-{name:"Tonic (в ассортименте)",price:280,vol:"0,33"},{name:"Тоник",price:280,vol:"0,33"}]},
-{name:"Энергетики",items:[{name:"Red Bull (классический, без сахара, тропический)",price:360,vol:"0,25"}]},
-{name:"Соки",items:[{name:"Яблоко, Апельсин, Вишня",price:280,vol:"0,2"}]},
-{name:"Кофе",items:[
-{name:"Американо",price:200},{name:"Апельсиновый эспрессо-тоник",price:390,vol:"0,4"},
-{name:"Капучино",price:260},{name:"Капучино со льдом",price:350,vol:"0,4"},
-{name:"Латте",price:300},{name:"Латте с сиропом",price:350},{name:"Эспрессо",price:200},{name:"Эспрессо-тоник",price:390,vol:"0,4"}]},
-{name:"Лимонады",items:[
-{name:"Малина-базилик",price:"360/690",vol:"0,4/0,9"},{name:"Манго-Маракуйя",price:"360/690",vol:"0,4/0,9"},
-{name:"Фейхоа-клубника",price:"360/690",vol:"0,4/0,9"},{name:"Щавель-ананас",price:"360/690",vol:"0,4/0,9"}]}
-]},
-{id:"cocktails",name:"Коктейли",subs:[
-{name:"Коктейли",items:[
-{name:"Апероль сприц",price:620,vol:"180мл",desc:"Апероль, шампанское, газировка"},
-{name:"Беллини",price:550,vol:"125 мл",desc:"Водка, спрайт, пюре клубники"},
-{name:"Белый русский",price:520,vol:"200мл",desc:"Водка, кофейный ликер, сливки"},
-{name:"Вайлдберис",price:620,vol:"170мл",desc:"Игристое, ягодный джин, сироп лесные ягоды"},
-{name:"Виски кола",price:490,vol:"200мл"},{name:"Виски Сауэр",price:540,vol:"115мл",desc:"Виски, лимонный сок, сахарный сироп, белок"},
-{name:"Грушевый Гимлет",price:600,vol:"140мл",desc:"Грушевая водка, щавелевый кордиал, лаймовый сироп"},
-{name:"Дайкири",price:590,vol:"160мл",desc:"Ром, сок лайма, сахарный сироп"},
-{name:"Джин безил смеш",price:500,vol:"150мл",desc:"Джин, базилик, лимонный сок, сахарный сироп"},
-{name:"Джин тоник",price:490,vol:"250мл"},{name:"Клубничный дайкири",price:600,vol:"200мл",desc:"Ром, клубничное пюре, лимонный сок, сахарный сироп"},
-{name:"Куба либре",price:540,vol:"140мл",desc:"Ром, кола, сок лайма"},
-{name:"Лонг Айленд",price:690,vol:"215мл",desc:"Джин, ром, текила, водка, трипл сек, лимонный сок, кола"},
-{name:"Маргарита",price:540,vol:"105мл",desc:"Текила, трипл сек, сок лайма, сахарный сироп"},
-{name:"Мартини Фиеро Тоник",price:620,vol:"280мл",desc:"Мартини фиеро, тоник"},
-{name:"Негрони",price:690,vol:"120мл",desc:"Мартини, джин, кампари"},
-{name:"Палома",price:600,vol:"350мл",desc:"Текила, сок лайма, сахарный сироп, грейпфрутовый сок, содовая"},
-{name:"Порн стар Мартини",price:600,vol:"180мл",desc:"Ванильная водка, пюре маракуйи, лимонный сок, ванильный сироп, игристое"},
-{name:"Саншайн",price:540,vol:"275мл",desc:"Джин, пюре мандарина, сироп ананас, сироп лайм, спрайт"},
-{name:"Текила санрайз",price:520,vol:"200мл",desc:"Текила, сироп гренадин, апельсиновый сок"},
-{name:"Френч 75",price:590,vol:"120мл",desc:"Джин, лимонный сок, игристое, сахарная пудра"}]}
-]},
-{id:"bar",name:"Бар",subs:[
-{name:"Водка",items:[
-{name:"Beluga Noble",price:320,vol:"40мл"},{name:"Beluga Transatlantic",price:360,vol:"40мл"},
-{name:"Лаб 40",price:280,vol:"40мл"},{name:"Царская",price:260,vol:"40мл"}]},
-{name:"Текила",items:[
-{name:"Head of Alfredo Garcia",price:390,vol:"40мл"},{name:"Альта коста сильвер",price:360,vol:"40мл"},
-{name:"Эль чарро голд",price:410,vol:"40мл"}]},
-{name:"Джин",items:[{name:"Bosford",price:330,vol:"40мл"},{name:"Hendricks",price:630,vol:"40мл"}]},
-{name:"Ром",items:[{name:"Oakheart Original Spiced Gold",price:360,vol:"40мл"}]},
-{name:"Виски",items:[
-{name:"Chivas Regal 12",price:660,vol:"40мл"},{name:"Dewar's 8 y.o. Caribbean Smooth",price:460,vol:"40мл"},
-{name:"Jameson",price:460,vol:"40мл"},{name:"Балантайнс",price:410,vol:"40мл"},{name:"Вильям Ловсон",price:390,vol:"40мл"}]},
-{name:"Бурбон",items:[
-{name:"Джек Дениалс",price:510,vol:"40мл"},{name:"Джим Бим",price:430,vol:"40мл"},{name:"Джим Бим яблочный",price:440,vol:"40мл"}]},
-{name:"Коньяк",items:[{name:"Martell VS",price:690,vol:"40мл"},{name:"Старейшина 5",price:320,vol:"40мл"}]},
-{name:"Ликёры",items:[
-{name:"Апероль",price:380,vol:"40мл"},{name:"Мартини Фиеро/Бьянко",price:450,vol:"80мл"},{name:"Ягермастер",price:420,vol:"40мл"}]},
-{name:"Игристое",items:[
-{name:"Аристов",price:"410/2400",vol:"125/750 мл"},{name:"Мартини Асти",price:4900,vol:"750 мл"},
-{name:"Мартини Брют",price:4900,vol:"750 мл"},{name:"Мартини Просекко",price:4900,vol:"750 мл"},
-{name:"Монтефоре Асти",price:3900,vol:"750 мл"},{name:"Монтефоре Просекко",price:"650/3900",vol:"125/750 мл"},
-{name:"Тарино",price:"350/2100",vol:"125/750 мл"}]},
-{name:"Белое вино",items:[
-{name:"Пино гриджио",price:"690/3900",vol:"125/750 мл"},{name:"Пти Шабли",price:6100,vol:"750 мл"},
-{name:"Рислинг",price:"490/2900",vol:"125/750 мл"},{name:"Совиньон Блан",price:"430/2500",vol:"125/750 мл"},
-{name:"Шардоне",price:"590/3500",vol:"125/750 мл"}]},
-{name:"Красное вино",items:[
-{name:"Гарнача",price:"590/3500",vol:"125/750 мл"},{name:"Каберне Совиньон",price:"490/2900",vol:"125/750 мл"},
-{name:"Кинзмараули",price:"520/3000",vol:"125/750 мл"},{name:"Пинотаж",price:"530/3100",vol:"125/750 мл"}]},
-{name:"Пиво разливное",items:[
-{name:"Крушовице",price:"310 / 410",vol:"0,3/0,5"},{name:"Мэйзор Арне Бланш",price:"310 / 410",vol:"0,3/0,5"}]},
-{name:"Пиво светлое",items:[
-{name:"Вайзенфелд Вайсс",price:380,vol:"0,5"},{name:"Вайзенфелд Пилс",price:380,vol:"0,5"}]},
-{name:"Фруктовое пиво",items:[
-{name:"Konix Cherry ruby",price:590,vol:"0,45"},{name:"Сидр груша",price:340,vol:"0,33"},
-{name:"Сидр яблоко",price:340,vol:"0,33"}]},
-{name:"Безалкогольное пиво",items:[
-{name:"Бад б.а",price:390,vol:"0,3"}]}
-]},
-{id:"tea",name:"Чайная карта",subs:[
-{name:"Пуэры",items:[{name:"Шу чэнь сян хун юнь, Лао тун Чжи 9988",price:410}]},
-{name:"Чёрный чай",items:[
-{name:"Чёрный Ассам",price:"290/360",vol:"0,5/0,9"},{name:"Чёрный с чабрецом",price:"290/360",vol:"0,5/0,9"},
-{name:"Эрл Грей",price:"290/360",vol:"0,5/0,9"}]},
-{name:"Зелёный чай",items:[{name:"Зелёный чай классический",price:"290/360",vol:"0,5/0,9"}]},
-{name:"Чай на травах",items:[{name:"Сокровища природы",price:"290/360",vol:"0,5/0,9",desc:"Лимонник, шиповник, цукаты, цедра апельсина, василёк, календула, роза"}]},
-{name:"Фруктовый чай",items:[
-{name:"Вишнёвый Пунш",price:"290/360",vol:"0,5/0,9"},{name:"Малина с мятой",price:"290/360",vol:"0,5/0,9"},
-{name:"Нахальный фрукт",price:"290/360",vol:"0,5/0,9"}]},
-{name:"Китайский чай",items:[{name:"Да Хун Пао",price:390},{name:"Те Гуань Инь",price:390}]},
-{name:"Авторский чай",items:[{name:"Пуэр на вишнёвом соке",price:690,vol:"1л",desc:"Пуэр, вишнёвый сок"}]}
+{n:"Арахис",p:"180/250",v:"50/100гр"},{n:"Вяленое мясо индейки",p:390,v:"50гр"},{n:"Вяленое мясо курицы",p:390,v:"50гр"},
+{n:"Миндаль барбекю",p:"250/450",v:"50/100гр"},{n:"Сет снеков",p:850,v:"195г",d:"Вяленое мясо (курица, индейка, миндаль, арахис, фисташки)"},
+{n:"Фисташки",p:"280/480",v:"50/100гр"},{n:"Фисташки барбекю",p:"290/490",v:"50/100гр"},{n:"Чипсы",p:210,v:"50гр"}]},
+{name:"Десерты",items:[{n:"Шоколадный фондан",p:410}]}
+]},{id:"hookah",name:"Дымное меню",subs:[{name:"Кальян",items:[
+{n:"Кальян стандарт",p:1500,d:"Табаки: Must Have, Starline, Burn, Spectrum, Khan Burley, Element, Dark Side, Trofimoffs и др."},
+{n:"Кальян премиум",p:1700,d:"Табаки: Dogma, Bonche"},{n:"Кальян элит",p:1900,d:"Парфюмированные табаки"},
+{n:"Кальян на фрукте",p:2300},{n:"Бизнес перекур стандарт",p:1200,d:"С 13:00 до 18:00. Кальян + чай"},
+{n:"Бизнес перекур премиум",p:1400,d:"С 13:00 до 18:00. Кальян + чай"},
+{n:"Перезабивка стандарт",p:1100,d:"Второй кальян в чеке"},{n:"Перезабивка премиум",p:1300},{n:"Перезабивка элит",p:1400}]}
+]},{id:"drinks",name:"Напитки",subs:[
+{name:"Вода",items:[{n:"Вода газ/негаз",p:260,v:"0,5"},{n:"Кокосовая вода",p:310,v:"0,33"}]},
+{name:"Газировка",items:[{n:"Coca-Cola",p:280,v:"0,25/0,33"},{n:"Fanta",p:280,v:"0,33"},{n:"Sprite",p:280,v:"0,33"},{n:"Tonic",p:280,v:"0,33"},{n:"Тоник",p:280,v:"0,33"}]},
+{name:"Энергетики",items:[{n:"Red Bull (классический, без сахара, тропический)",p:360,v:"0,25"}]},
+{name:"Соки",items:[{n:"Яблоко, Апельсин, Вишня",p:280,v:"0,2"}]},
+{name:"Кофе",items:[{n:"Американо",p:200},{n:"Апельсиновый эспрессо-тоник",p:390,v:"0,4"},{n:"Капучино",p:260},{n:"Капучино со льдом",p:350,v:"0,4"},{n:"Латте",p:300},{n:"Латте с сиропом",p:350},{n:"Эспрессо",p:200},{n:"Эспрессо-тоник",p:390,v:"0,4"}]},
+{name:"Лимонады",items:[{n:"Малина-базилик",p:"360/690",v:"0,4/0,9"},{n:"Манго-Маракуйя",p:"360/690",v:"0,4/0,9"},{n:"Фейхоа-клубника",p:"360/690",v:"0,4/0,9"},{n:"Щавель-ананас",p:"360/690",v:"0,4/0,9"}]}
+]},{id:"cocktails",name:"Коктейли",subs:[{name:"Коктейли",items:[
+{n:"Апероль сприц",p:620,v:"180мл",d:"Апероль, шампанское, газировка"},{n:"Беллини",p:550,v:"125 мл",d:"Водка, спрайт, пюре клубники"},
+{n:"Белый русский",p:520,v:"200мл",d:"Водка, кофейный ликер, сливки"},{n:"Вайлдберис",p:620,v:"170мл",d:"Игристое, ягодный джин, сироп лесные ягоды"},
+{n:"Виски кола",p:490,v:"200мл"},{n:"Виски Сауэр",p:540,v:"115мл",d:"Виски, лимонный сок, сахарный сироп, белок"},
+{n:"Грушевый Гимлет",p:600,v:"140мл",d:"Грушевая водка, щавелевый кордиал, лаймовый сироп"},
+{n:"Дайкири",p:590,v:"160мл",d:"Ром, сок лайма, сахарный сироп"},{n:"Джин безил смеш",p:500,v:"150мл",d:"Джин, базилик, лимонный сок, сахарный сироп"},
+{n:"Джин тоник",p:490,v:"250мл"},{n:"Клубничный дайкири",p:600,v:"200мл",d:"Ром, клубничное пюре, лимонный сок"},
+{n:"Куба либре",p:540,v:"140мл",d:"Ром, кола, сок лайма"},{n:"Лонг Айленд",p:690,v:"215мл",d:"Джин, ром, текила, водка, трипл сек, лимонный сок, кола"},
+{n:"Маргарита",p:540,v:"105мл",d:"Текила, трипл сек, сок лайма"},{n:"Мартини Фиеро Тоник",p:620,v:"280мл",d:"Мартини фиеро, тоник"},
+{n:"Негрони",p:690,v:"120мл",d:"Мартини, джин, кампари"},{n:"Палома",p:600,v:"350мл",d:"Текила, сок лайма, грейпфрутовый сок, содовая"},
+{n:"Порн стар Мартини",p:600,v:"180мл",d:"Ванильная водка, пюре маракуйи, лимонный сок, игристое"},
+{n:"Саншайн",p:540,v:"275мл",d:"Джин, пюре мандарина, сироп ананас, сироп лайм, спрайт"},
+{n:"Текила санрайз",p:520,v:"200мл",d:"Текила, сироп гренадин, апельсиновый сок"},
+{n:"Френч 75",p:590,v:"120мл",d:"Джин, лимонный сок, игристое"}]}
+]},{id:"bar",name:"Бар",subs:[
+{name:"Водка",items:[{n:"Beluga Noble",p:320,v:"40мл"},{n:"Beluga Transatlantic",p:360,v:"40мл"},{n:"Лаб 40",p:280,v:"40мл"},{n:"Царская",p:260,v:"40мл"}]},
+{name:"Текила",items:[{n:"Head of Alfredo Garcia",p:390,v:"40мл"},{n:"Альта коста сильвер",p:360,v:"40мл"},{n:"Эль чарро голд",p:410,v:"40мл"}]},
+{name:"Джин",items:[{n:"Bosford",p:330,v:"40мл"},{n:"Hendricks",p:630,v:"40мл"}]},
+{name:"Ром",items:[{n:"Oakheart Original Spiced Gold",p:360,v:"40мл"}]},
+{name:"Виски",items:[{n:"Chivas Regal 12",p:660,v:"40мл"},{n:"Dewar's 8 y.o.",p:460,v:"40мл"},{n:"Jameson",p:460,v:"40мл"},{n:"Балантайнс",p:410,v:"40мл"},{n:"Вильям Ловсон",p:390,v:"40мл"}]},
+{name:"Бурбон",items:[{n:"Джек Дениалс",p:510,v:"40мл"},{n:"Джим Бим",p:430,v:"40мл"},{n:"Джим Бим яблочный",p:440,v:"40мл"}]},
+{name:"Коньяк",items:[{n:"Martell VS",p:690,v:"40мл"},{n:"Старейшина 5",p:320,v:"40мл"}]},
+{name:"Ликёры",items:[{n:"Апероль",p:380,v:"40мл"},{n:"Мартини Фиеро/Бьянко",p:450,v:"80мл"},{n:"Ягермастер",p:420,v:"40мл"}]},
+{name:"Игристое",items:[{n:"Аристов",p:"410/2400",v:"125/750 мл"},{n:"Мартини Асти",p:4900,v:"750 мл"},{n:"Мартини Брют",p:4900,v:"750 мл"},{n:"Мартини Просекко",p:4900,v:"750 мл"},{n:"Монтефоре Асти",p:3900,v:"750 мл"},{n:"Монтефоре Просекко",p:"650/3900",v:"125/750 мл"},{n:"Тарино",p:"350/2100",v:"125/750 мл"}]},
+{name:"Белое вино",items:[{n:"Пино гриджио",p:"690/3900",v:"125/750 мл"},{n:"Пти Шабли",p:6100,v:"750 мл"},{n:"Рислинг",p:"490/2900",v:"125/750 мл"},{n:"Совиньон Блан",p:"430/2500",v:"125/750 мл"},{n:"Шардоне",p:"590/3500",v:"125/750 мл"}]},
+{name:"Красное вино",items:[{n:"Гарнача",p:"590/3500",v:"125/750 мл"},{n:"Каберне Совиньон",p:"490/2900",v:"125/750 мл"},{n:"Кинзмараули",p:"520/3000",v:"125/750 мл"},{n:"Пинотаж",p:"530/3100",v:"125/750 мл"}]},
+{name:"Пиво разливное",items:[{n:"Крушовице",p:"310 / 410",v:"0,3/0,5"},{n:"Мэйзор Арне Бланш",p:"310 / 410",v:"0,3/0,5"}]},
+{name:"Пиво светлое",items:[{n:"Вайзенфелд Вайсс",p:380,v:"0,5"},{n:"Вайзенфелд Пилс",p:380,v:"0,5"}]},
+{name:"Фруктовое пиво",items:[{n:"Konix Cherry ruby",p:590,v:"0,45"},{n:"Сидр груша",p:340,v:"0,33"},{n:"Сидр яблоко",p:340,v:"0,33"}]},
+{name:"Безалкогольное пиво",items:[{n:"Бад б.а",p:390,v:"0,3"}]}
+]},{id:"tea",name:"Чайная карта",subs:[
+{name:"Пуэры",items:[{n:"Шу чэнь сян хун юнь, Лао тун Чжи 9988",p:410}]},
+{name:"Чёрный чай",items:[{n:"Чёрный Ассам",p:"290/360",v:"0,5/0,9"},{n:"Чёрный с чабрецом",p:"290/360",v:"0,5/0,9"},{n:"Эрл Грей",p:"290/360",v:"0,5/0,9"}]},
+{name:"Зелёный чай",items:[{n:"Зелёный чай классический",p:"290/360",v:"0,5/0,9"}]},
+{name:"Чай на травах",items:[{n:"Сокровища природы",p:"290/360",v:"0,5/0,9",d:"Лимонник, шиповник, цукаты, цедра апельсина, василёк, календула, роза"}]},
+{name:"Фруктовый чай",items:[{n:"Вишнёвый Пунш",p:"290/360",v:"0,5/0,9"},{n:"Малина с мятой",p:"290/360",v:"0,5/0,9"},{n:"Нахальный фрукт",p:"290/360",v:"0,5/0,9"}]},
+{name:"Китайский чай",items:[{n:"Да Хун Пао",p:390},{n:"Те Гуань Инь",p:390}]},
+{name:"Авторский чай",items:[{n:"Пуэр на вишнёвом соке",p:690,v:"1л",d:"Пуэр, вишнёвый сок"}]}
 ]}];
-const GALLERY = [
-{src:"photos/gallery-1.svg",caption:"Уютный зал"},{src:"photos/gallery-2.svg",caption:"Вечерний свет"},
-{src:"photos/gallery-3.svg",caption:"Фасад кафе"},{src:"photos/gallery-4.svg",caption:"Лаунж-зона"},
-{src:"photos/gallery-5.svg",caption:"Кофе и кальян"},{src:"photos/gallery-6.svg",caption:"Вход"}
-];
+const GALLERY=[{src:"photos/gallery-1.svg",c:"Уютный зал"},{src:"photos/gallery-2.svg",c:"Вечерний свет"},{src:"photos/gallery-3.svg",c:"Фасад кафе"},{src:"photos/gallery-4.svg",c:"Лаунж-зона"},{src:"photos/gallery-5.svg",c:"Кофе и кальян"},{src:"photos/gallery-6.svg",c:"Вход"}];
 
-// ====== CANVAS ======
-(function(){
-const c=document.getElementById("bg-canvas"),x=c.getContext("2d");
-let w,h,ps=[];
-function rz(){w=c.width=innerWidth;h=c.height=innerHeight;ps=[];for(let i=0;i<Math.min(w*h/15000,80);i++)ps.push({x:Math.random()*w,y:Math.random()*h,s:Math.random()*1.5+.5,sx:(Math.random()-.5)*.3,sy:(Math.random()-.5)*.3,o:Math.random()*.4+.1,pl:Math.random()*Math.PI*2})}
-function dr(){x.clearRect(0,0,w,h);
-for(let i=0;i<ps.length;i++)for(let j=i+1;j<ps.length;j++){const dx=ps[i].x-ps[j].x,dy=ps[i].y-ps[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<150){const a=(1-d/150)*.08;x.strokeStyle=`rgba(212,168,83,${a})`;x.lineWidth=.5;x.beginPath();x.moveTo(ps[i].x,ps[i].y);x.lineTo(ps[j].x,ps[j].y);x.stroke()}}
-for(const p of ps){p.x+=p.sx;p.y+=p.sy;if(p.x<0)p.x=w;if(p.x>w)p.x=0;if(p.y<0)p.y=h;if(p.y>h)p.y=0;p.pl+=.02;const a=p.o+Math.sin(p.pl)*.1;x.beginPath();x.arc(p.x,p.y,p.s,0,Math.PI*2);x.fillStyle=`rgba(212,168,83,${Math.max(0,Math.min(.6,a))})`;x.fill();const g=x.createRadialGradient(p.x,p.y,0,p.x,p.y,p.s*4);g.addColorStop(0,`rgba(212,168,83,${a*.3})`);g.addColorStop(1,"rgba(212,168,83,0)");x.beginPath();x.arc(p.x,p.y,p.s*4,0,Math.PI*2);x.fillStyle=g;x.fill()}
-requestAnimationFrame(dr)}
-addEventListener("resize",rz);rz();dr();
-})();
+// CANVAS
+(function(){const c=document.getElementById("bg-canvas"),x=c.getContext("2d");let w,h,ps=[];function rz(){w=c.width=innerWidth;h=c.height=innerHeight;ps=[];for(let i=0;i<Math.min(w*h/15000,80);i++)ps.push({x:Math.random()*w,y:Math.random()*h,s:Math.random()*1.5+.5,sx:(Math.random()-.5)*.3,sy:(Math.random()-.5)*.3,o:Math.random()*.4+.1,pl:Math.random()*Math.PI*2})}function dr(){x.clearRect(0,0,w,h);for(let i=0;i<ps.length;i++)for(let j=i+1;j<ps.length;j++){const dx=ps[i].x-ps[j].x,dy=ps[i].y-ps[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<150){const a=(1-d/150)*.08;x.strokeStyle=`rgba(212,168,83,${a})`;x.lineWidth=.5;x.beginPath();x.moveTo(ps[i].x,ps[i].y);x.lineTo(ps[j].x,ps[j].y);x.stroke()}}for(const p of ps){p.x+=p.sx;p.y+=p.sy;if(p.x<0)p.x=w;if(p.x>w)p.x=0;if(p.y<0)p.y=h;if(p.y>h)p.y=0;p.pl+=.02;const a=p.o+Math.sin(p.pl)*.1;x.beginPath();x.arc(p.x,p.y,p.s,0,Math.PI*2);x.fillStyle=`rgba(212,168,83,${Math.max(0,Math.min(.6,a))})`;x.fill();const g=x.createRadialGradient(p.x,p.y,0,p.x,p.y,p.s*4);g.addColorStop(0,`rgba(212,168,83,${a*.3})`);g.addColorStop(1,"rgba(212,168,83,0)");x.beginPath();x.arc(p.x,p.y,p.s*4,0,Math.PI*2);x.fillStyle=g;x.fill()}requestAnimationFrame(dr)}addEventListener("resize",rz);rz();dr()})();
 
-// CURSOR GLOW
+// CURSOR
 (function(){const g=document.getElementById("cursor-glow");let mx=-500,my=-500,tx=-500,ty=-500;addEventListener("mousemove",e=>{tx=e.clientX;ty=e.clientY;g.style.opacity="1"});addEventListener("mouseleave",()=>{g.style.opacity="0"});(function a(){mx+=(tx-mx)*.08;my+=(ty-my)*.08;g.style.left=mx+"px";g.style.top=my+"px";requestAnimationFrame(a)})()})();
-
-// PRELOADER
 addEventListener("load",()=>setTimeout(()=>document.getElementById("preloader").classList.add("hidden"),800));
 
 // NAV
 (function(){const n=document.getElementById("nav"),b=document.getElementById("nav-burger"),m=document.getElementById("nav-mobile");addEventListener("scroll",()=>n.classList.toggle("scrolled",scrollY>50));b.addEventListener("click",()=>{b.classList.toggle("active");m.classList.toggle("active")});m.querySelectorAll("a, button").forEach(e=>e.addEventListener("click",()=>{b.classList.remove("active");m.classList.remove("active")}))})();
 
-// SCROLL REVEAL
+// REVEAL
 (function(){const o=new IntersectionObserver(e=>e.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");o.unobserve(e.target)}}),{threshold:.1,rootMargin:"0px 0px -50px 0px"});document.querySelectorAll(".reveal").forEach(e=>o.observe(e))})();
 
 // STAT COUNTERS
 (function(){const o=new IntersectionObserver(e=>e.forEach(e=>{if(e.isIntersecting){const t=e.target,v=parseFloat(t.dataset.counter),d=parseInt(t.dataset.decimals)||0,s=t.dataset.suffix||"",st=performance.now();(function a(n){const p=Math.min((n-st)/2000,1),e=1-Math.pow(1-p,3),c=v*e;t.textContent=c.toFixed(d)+s;if(p<1)requestAnimationFrame(a)})();o.unobserve(t)}}),{threshold:.5});document.querySelectorAll("[data-counter]").forEach(e=>o.observe(e))})();
 
-// MENU RENDER
+// MENU
 let activeSection="kitchen",activeSub=0;
-function renderSectionBtns(){const c=document.getElementById("menu-sections");c.innerHTML=MENU.map(s=>`<button class="menu-section-btn${s.id===activeSection?" active":""}" onclick="switchSection('${s.id}')">${s.name}</button>`).join("")}
+function renderSectionBtns(){document.getElementById("menu-sections").innerHTML=MENU.map(s=>`<button class="menu-section-btn${s.id===activeSection?" active":""}" onclick="switchSection('${s.id}')">${s.name}</button>`).join("")}
 function renderSubBtns(){const c=document.getElementById("menu-subs"),s=MENU.find(s=>s.id===activeSection);if(!s||s.subs.length<=1){c.innerHTML="";return}c.innerHTML=s.subs.map((s,i)=>`<button class="menu-sub-btn${i===activeSub?" active":""}" onclick="switchSub(${i})">${s.name}</button>`).join("")}
-function renderItems(){const c=document.getElementById("menu-grid"),s=MENU.find(s=>s.id===activeSection);if(!s){c.innerHTML="";return}const sub=s.subs[activeSub]||s.subs[0];c.innerHTML=sub.items.map((item,i)=>`<article class="menu-item" style="animation:miIn .4s ${i*40}ms both"><div class="menu-item-main"><div class="menu-item-header"><span class="menu-item-name">${item.name}</span>${item.vol?`<span class="menu-item-volume">${item.vol}</span>`:""}</div>${item.desc?`<p class="menu-item-desc">${item.desc}</p>`:""}</div><span class="menu-item-price">${typeof item.price==="number"?item.price.toLocaleString("ru-RU")+" ₽":item.price+" ₽"}</span></article>`).join("")}
+function pf(p){return typeof p==="number"?p.toLocaleString("ru-RU")+" ₽":p+" ₽"}
+function renderItems(){const c=document.getElementById("menu-grid"),s=MENU.find(s=>s.id===activeSection);if(!s){c.innerHTML="";return}const sub=s.subs[activeSub]||s.subs[0];c.innerHTML=sub.items.map((item,i)=>{const img=IMG[item.n];return img?`<article class="menu-item" style="animation:miIn .4s ${i*40}ms both"><img class="menu-item-img" src="${img}" alt="${item.n}" loading="lazy" onerror="this.style.display='none'"><div class="menu-item-body"><div class="menu-item-header"><span class="menu-item-name">${item.n}${item.v?` <span class="menu-item-volume">${item.v}</span>`:""}</span><span class="menu-item-price">${pf(item.p)}</span></div>${item.d?`<p class="menu-item-desc">${item.d}</p>`:""}</div></article>`:`<article class="menu-item menu-item-noimg" style="animation:miIn .4s ${i*40}ms both"><div class="menu-item-body"><div class="menu-item-header"><span class="menu-item-name">${item.n}${item.v?` <span class="menu-item-volume">${item.v}</span>`:""}</span><span class="menu-item-price">${pf(item.p)}</span></div>${item.d?`<p class="menu-item-desc">${item.d}</p>`:""}</div></article>`}).join("")}
 function switchSection(id){activeSection=id;activeSub=0;renderSectionBtns();renderSubBtns();renderItems()}
 function switchSub(i){activeSub=i;renderSubBtns();renderItems()}
 renderSectionBtns();renderSubBtns();renderItems();
+const as=document.createElement("style");as.textContent="@keyframes miIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}";document.head.appendChild(as);
 
 // GALLERY
-document.getElementById("gallery-grid").innerHTML=GALLERY.map(i=>`<div class="gallery-item"><img class="gallery-img" src="${i.src}" alt="${i.caption}" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\"height:100%;display:flex;align-items:center;justify-content:center;background:var(--bg3);border-radius:var(--radius)\"><span style=\"font-size:48px\">📸</span></div>'"><div class="gallery-caption">${i.caption}</div></div>`).join("");
-
-// ANIMATION KEYFRAME
-const s=document.createElement("style");s.textContent="@keyframes miIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}";document.head.appendChild(s);
+document.getElementById("gallery-grid").innerHTML=GALLERY.map(i=>`<div class="gallery-item"><img class="gallery-img" src="${i.src}" alt="${i.c}" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\"height:100%;display:flex;align-items:center;justify-content:center;background:var(--bg3);border-radius:var(--radius)\"><span style=\"font-size:48px\">📸</span></div>'"><div class="gallery-caption">${i.c}</div></div>`).join("");
 
 // BOOKING
-const SK="izzy_hook_booking",MAX=20,OH=13,CH=27;
+const SK="izzy_book",MAX=20,OH=13,CH=27;
 function gb(){try{return JSON.parse(localStorage.getItem(SK))||[]}catch{return[]}}
 function sb(b){localStorage.setItem(SK,JSON.stringify(b))}
 function cp(p){return p.replace(/\D/g,"")}
 function fp(p){const c=cp(p);if(!c)return"";let r="+7";if(c.length>1)r+=" ("+c.slice(1,4);if(c.length>=4)r+=") "+c.slice(4,7);if(c.length>=7)r+="-"+c.slice(7,9);if(c.length>=9)r+="-"+c.slice(9,11);return r}
-function ivp(p){const c=cp(p);return c.length===11&&(c.startsWith("7")||c.startsWith("8"))}
+function ivp(p){return cp(p).length===11}
 function gts(){const s=[];for(let h=OH;h<CH;h++){const hr=h%24;s.push(`${String(hr).padStart(2,"0")}:00`);s.push(`${String(hr).padStart(2,"0")}:30`)}return s}
 function fd(d){const dt=new Date(d+"T00:00:00");return isNaN(dt.getTime())?d:dt.toLocaleDateString("ru-RU",{day:"numeric",month:"long"})}
-function ft(t){const[h,m]=t.split(":");return`${h}:${m}`}
 function td(){const d=new Date();return`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`}
 function ip(d){return d<td()}
 function gid(){return Date.now().toString(36)+Math.random().toString(36).slice(2,8)}
 function gc(){const ch="ABCDEFGHJKLMNPQRSTUVWXYZ23456789";let c="";for(let i=0;i<4;i++)c+=ch[Math.floor(Math.random()*ch.length)];return"IH-"+c}
 function gos(b,d,t){return b.filter(b=>b.date===d&&b.time===t).reduce((s,b)=>s+b.guests,0)}
-function cw(n){const m=n%10,m100=n%100;return m===1&&m100!==11?"гостя":"гостей"}
-
-function om(){document.getElementById("booking-modal").classList.add("active");document.getElementById("view-form").classList.add("active");document.getElementById("view-success").classList.remove("active");document.getElementById("view-check").classList.remove("active");pts();smd()}
-function cm(){document.getElementById("booking-modal").classList.remove("active")}
-function openBooking(){om()}
-function openBookingCheck(){document.getElementById("booking-modal").classList.add("active");document.getElementById("view-form").classList.remove("active");document.getElementById("view-success").classList.remove("active");document.getElementById("view-check").classList.add("active")}
-function switchToCheck(){document.getElementById("view-form").classList.remove("active");document.getElementById("view-check").classList.add("active")}
-function switchToBook(){document.getElementById("view-check").classList.remove("active");document.getElementById("view-form").classList.add("active");pts();smd()}
-function pts(){const s=document.querySelector('#booking-form select[name="time"]');s.innerHTML='<option value="">Выберите время</option>'+gts().map(t=>`<option value="${t}">${ft(t)}</option>`).join("")}
-function smd(){const i=document.querySelector('#booking-form input[name="date"]');i.min=td();if(!i.value||ip(i.value))i.value=td()}
+function cw(n){const m=n%10;return m===1&&n%100!==11?"гостя":"гостей"}
 function st(m,t=""){const el=document.getElementById("toast");el.textContent=m;el.className="toast "+t+" visible";clearTimeout(el._t);el._t=setTimeout(()=>el.classList.remove("visible"),3000)}
-
-function handleBooking(e){e.preventDefault();const f=e.target,d=Object.fromEntries(new FormData(f));
-if(d.name.trim().length<2)return st("Укажите имя (минимум 2 символа).","error");
-if(!ivp(d.phone))return st("Проверьте номер телефона — нужно 11 цифр.","error");
-if(!d.date||ip(d.date))return st("Выберите корректную дату.","error");
-if(!d.time)return st("Выберите удобное время.","error");
-const gs=parseInt(d.guests);if(!gs||gs<1||gs>20)return st("Количество гостей — от 1 до 20.","error");
-const bks=gb(),ex=gos(bks,d.date,d.time);if(ex+gs>MAX){const l=Math.max(0,MAX-ex);return st(l===0?`На ${fd(d.date)} в ${ft(d.time)} уже всё занято.`:`Осталось мест на ${l} ${cw(l)}.`,"error")}
-const bk={id:gid(),code:gc(),name:d.name.trim(),phone:cp(d.phone),date:d.date,time:d.time,guests:gs,comment:d.comment.trim(),createdAt:Date.now()};bks.push(bk);sb(bks);
-document.getElementById("view-form").classList.remove("active");document.getElementById("view-success").classList.add("active");
-document.getElementById("success-details").textContent=`${bk.name}, ваш столик на ${fd(bk.date)} в ${ft(bk.time)} на ${bk.guests} ${cw(bk.guests)}.`;document.getElementById("success-code").textContent=bk.code;st("Бронь создана!","success");f.reset()}
-
-function handleCheck(e){e.preventDefault();const q=e.target.querySelector('[name="query"]').value.trim().toUpperCase();if(!q)return;const bks=gb(),ph=cp(q),r=bks.filter(b=>(q.startsWith("IH-")&&b.code.toUpperCase()===q)||b.code.toUpperCase()===q||(ph&&b.phone.includes(ph.slice(-10))));const c=document.getElementById("check-results");c.innerHTML=r.length===0?'<p style="color:var(--white3);text-align:center;padding:16px">Брони не найдены.</p>':r.map(b=>`<div style="background:var(--bg3);border:1px solid rgba(212,168,83,.15);border-radius:12px;padding:16px;margin-bottom:8px"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><strong style="font-family:monospace;color:var(--gold);font-size:18px">${b.code}</strong><span style="font-size:13px;color:var(--white3)">${fd(b.date)} · ${ft(b.time)}</span></div><p style="font-size:14px;color:var(--white2)">${b.name} · ${b.guests} ${cw(b.guests)}</p>${b.comment?`<p style="font-size:13px;color:var(--white3);margin-top:4px">💬 ${b.comment}</p>`:""}</div>`).join("")}
-
+function om(){const m=document.getElementById("booking-modal");m.classList.add("active");document.getElementById("view-form").classList.add("active");document.getElementById("view-success").classList.remove("active");document.getElementById("view-check").classList.remove("active");const s=document.querySelector('#booking-form select[name="time"]');s.innerHTML='<option value="">Выберите время</option>'+gts().map(t=>`<option value="${t}">${t}</option>`).join("");const i=document.querySelector('#booking-form input[name="date"]');i.min=td();if(!i.value||ip(i.value))i.value=td()}
+function cm(){document.getElementById("booking-modal").classList.remove("active")}
+function openBooking(){om()}function openBookingCheck(){document.getElementById("booking-modal").classList.add("active");document.getElementById("view-form").classList.remove("active");document.getElementById("view-success").classList.remove("active");document.getElementById("view-check").classList.add("active")}
+function switchToCheck(){document.getElementById("view-form").classList.remove("active");document.getElementById("view-check").classList.add("active")}
+function switchToBook(){document.getElementById("view-check").classList.remove("active");document.getElementById("view-form").classList.add("active");om()}
+function handleBooking(e){e.preventDefault();const f=e.target,d=Object.fromEntries(new FormData(f));if(d.name.trim().length<2)return st("Укажите имя.","error");if(!ivp(d.phone))return st("Номер телефона — 11 цифр.","error");if(!d.date||ip(d.date))return st("Выберите дату.","error");if(!d.time)return st("Выберите время.","error");const gs=parseInt(d.guests);if(!gs||gs<1||gs>20)return st("1–20 гостей.","error");const bks=gb(),ex=gos(bks,d.date,d.time);if(ex+gs>MAX){const l=Math.max(0,MAX-ex);return st(l===0?"Всё занято.":`Осталось ${l} ${cw(l)}.`,"error")}const bk={id:gid(),code:gc(),name:d.name.trim(),phone:cp(d.phone),date:d.date,time:d.time,guests:gs,comment:d.comment.trim(),createdAt:Date.now()};bks.push(bk);sb(bks);document.getElementById("view-form").classList.remove("active");document.getElementById("view-success").classList.add("active");document.getElementById("success-details").textContent=`${bk.name}, ваш столик на ${fd(bk.date)} в ${bk.time} на ${bk.guests} ${cw(bk.guests)}.`;document.getElementById("success-code").textContent=bk.code;st("Бронь создана!","success");f.reset()}
+function handleCheck(e){e.preventDefault();const q=e.target.querySelector('[name="query"]').value.trim().toUpperCase();if(!q)return;const bks=gb(),ph=cp(q),r=bks.filter(b=>(q.startsWith("IH-")&&b.code.toUpperCase()===q)||b.code.toUpperCase()===q||(ph&&b.phone.includes(ph.slice(-10))));document.getElementById("check-results").innerHTML=r.length===0?'<p style="color:var(--white3);text-align:center;padding:16px">Не найдено.</p>':r.map(b=>`<div style="background:var(--bg3);border:1px solid rgba(212,168,83,.15);border-radius:12px;padding:16px;margin-bottom:8px"><div style="display:flex;justify-content:space-between;margin-bottom:8px"><strong style="font-family:monospace;color:var(--gold);font-size:18px">${b.code}</strong><span style="font-size:13px;color:var(--white3)">${fd(b.date)} · ${b.time}</span></div><p style="font-size:14px;color:var(--white2)">${b.name} · ${b.guests} ${cw(b.guests)}</p>${b.comment?`<p style="font-size:13px;color:var(--white3);margin-top:4px">💬 ${b.comment}</p>`:""}</div>`).join("")}
 addEventListener("keydown",e=>{if(e.key==="Escape")cm()});
 document.getElementById("year").textContent=new Date().getFullYear();
 document.querySelectorAll('input[type="tel"]').forEach(i=>i.addEventListener("input",()=>{i.value=fp(i.value)}));
